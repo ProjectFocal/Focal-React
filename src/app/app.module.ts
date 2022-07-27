@@ -1,3 +1,4 @@
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -10,14 +11,20 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
 import { AboutComponent } from './components/pages/about/about.component';
 
+
+
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     NavbarComponent,
     FooterComponent,
-    AboutComponent
-  ],
+    AboutComponent,
+
+   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
