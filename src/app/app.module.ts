@@ -10,7 +10,11 @@ import { HomeComponent } from './components/pages/home/home.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
 import { AboutComponent } from './components/pages/about/about.component';
-
+import { SettingsComponent } from './components/pages/settings/settings.component';
+import { LoginComponent } from './components/pages/login/login.component';
+import { CreateContentComponent } from './components/pages/create-content/create-content.component';
+import { ProfileComponent } from './components/pages/profile/profile.component';
+import { FriendsComponent } from './components/pages/friends/friends.component';
 
 
 
@@ -23,6 +27,11 @@ import { AboutComponent } from './components/pages/about/about.component';
     NavbarComponent,
     FooterComponent,
     AboutComponent,
+    SettingsComponent,
+    LoginComponent,
+    CreateContentComponent,
+    ProfileComponent,
+    FriendsComponent,
 
    ],
   imports: [

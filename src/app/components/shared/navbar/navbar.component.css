@@ -21,10 +21,15 @@
 
 .mat-toolbar.mat-primary {
   background: #1f2041;
-  color: #ffc857
+  color: #ffff
 }
 
 .text {
   margin: auto;
   width: 52%;
 }
+
+.navpad {
+  padding: 10px;
+}
+
