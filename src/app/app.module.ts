@@ -33,6 +33,7 @@ import { ProfileComponent } from './components/pages/profile/profile.component';
     ProfileComponent,
 
 
+
    ],
   imports: [
     BrowserModule,

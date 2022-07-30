@@ -8,7 +8,7 @@
 
   <span class="spacer"></span>
 
-  
+
 
   <div class="example-button-container">
     <button mat-mini-fab color="primary" [routerLink]="'create-content'">
@@ -18,6 +18,7 @@
 </mat-toolbar>
 
 <mat-sidenav-container>
+
   <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
     <img class="avatar mat-elevation-z8"
       src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" />
@@ -34,6 +35,10 @@
     <button mat-button class="menu-button" routerLink="/profile">
       <mat-icon>person</mat-icon>
       <span>Profile</span>
+    </button>
+    <button mat-button class="menu-button" routerLink="/profile">
+      <mat-icon>peoples</mat-icon>
+      <span>Friends</span>
     </button>
     <button mat-button class="menu-button" routerLink="/settings">
       <mat-icon>settings</mat-icon>
@@ -56,4 +61,5 @@
       <router-outlet></router-outlet>
     </div>
   </mat-sidenav-content>
+
 </mat-sidenav-container>
