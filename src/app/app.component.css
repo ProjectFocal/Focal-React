@@ -2,7 +2,7 @@ mat-sidenav {
   margin: 16px;
   width: 200px;
   border-right: none;
-  background: #002b5c;
+  background: #1f2041;
   color: white;
   border-radius: 10px;
   padding: 16px;
@@ -42,10 +42,66 @@ mat-sidenav-container {
 .designation {
   margin-top: 2px;
   font-size: 0.7rem;
-  color: lightgrey;
+  color: #1f2041;;
 }
 mat-divider {
   margin-top: 16px;
   margin-bottom: 16px;
   background-color: rgba(255, 255, 255, 0.5);
 }
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.colour {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.navbar-light .navbar-nav .nav-link.active-link
+{
+    color: #1f2041;
+    text-decoration: underline;
+}
+
+.navbar-light .navbar-nav .nav-link
+{
+    color: var(--secondary-color);
+}
+.navbar-light .navbar-nav .nav-link.active-link
+{
+    color: #1f2041;
+    text-decoration: underline;
+}
+.spacer {
+  flex: 1 1 auto;
+}
+
+.title {
+  flex: 0 0 auto;
+  padding-right: 10px;
+  padding-top: 2px;
+}
+.spacer-1 {
+  width: 100px;
+}
+
+.mat-toolbar.mat-primary {
+  background: #1f2041;
+  color: #ffff
+}
+
+.text {
+  margin: auto;
+  width: 52%;
+}
+
+.navpad {
+  padding: 10px;
+}
+
+.justcenter {
+  margin: auto;
+  width: 50%;
+}
+

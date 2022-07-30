@@ -1,9 +1,0 @@
-Front end related thingys:
-
-  use the "center" class that can be found in /focal/environments/styles.css
-  to center things, it also adds a 40 pixel padding around the perimeter. There is
-  also "nicepadding" that can be found in the same directory that just adds a 40 pixel
-  padding.
-
-  Weird issues bcs i suck and web devlopement. The create component in /focal/src/app/component/pages/create
-  cannot be accessed for whatever reason.

@@ -25,5 +25,20 @@ mat-grid-tile {
   background: lightblue;
 }
 
+* {
+  box-sizing: border-box;
+}
 
+/* Create a two-column layout */
+.column {
+  float: left;
+  width: 50%;
+  padding: 5px;
+}
 
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}

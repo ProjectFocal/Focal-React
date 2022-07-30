@@ -6,7 +6,7 @@ import { SettingsComponent } from './components/pages/settings/settings.componen
 import { LoginComponent } from './components/pages/login/login.component';
 import { CreateContentComponent } from './components/pages/create-content/create-content.component';
 import { ProfileComponent } from './components/pages/profile/profile.component';
-import { FriendsComponent } from './components/pages/friends/friends.component';
+
 
 
 const routes: Routes = [
@@ -16,7 +16,7 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'create-content', component: CreateContentComponent},
   {path: 'profile', component: ProfileComponent},
-  {path: 'friends', component: FriendsComponent},
+
 
 
 ];

@@ -1,0 +1,74 @@
+<!-- Top nav bar content starts here -->
+
+<mat-toolbar color="primary">
+
+  <button mat-icon-button (click)="sidenav.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  Focal
+
+
+
+  <span class="spacer"></span>
+
+
+  <div class="example-button-container">
+    <button mat-mini-fab color="primary" [routerLink]="'create-content'">
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+</mat-toolbar>
+
+
+<!-- Top nav bar content ends here -->
+<div class="navpad">
+
+</div>
+
+<!-- Side nav bar content starts here -->
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav ppened=true>
+    <mat-nav-list>
+      <a mat-list-item [routerLink]="''">
+        <mat-icon>home</mat-icon>Home
+      </a>
+      <a mat-list-item [routerLink]="'profile'">
+        <mat-icon>account_circle</mat-icon>Profile
+      </a>
+      <a mat-list-item [routerLink]="'friends'">
+        <mat-icon>people</mat-icon>Friends
+      </a>
+      <a mat-list-item [routerLink]="'settings'">
+        <mat-icon>settings</mat-icon>Settings
+      </a>
+      <a mat-list-item [routerLink]="''">
+        <mat-icon>help</mat-icon>Help
+      </a>
+      <a mat-list-item [routerLink]="''">
+        <mat-icon>contact_support</mat-icon>Support
+      </a>
+
+
+
+    </mat-nav-list>
+
+  </mat-sidenav>
+
+  <!-- Side nav bar content ends here -->
+
+
+
+
+  <mat-sidenav-content>
+
+    <div style="height: 88vh;">
+      <router-outlet>
+
+      </router-outlet>
+    </div>
+  </mat-sidenav-content>
+
+
+
+</mat-sidenav-container>
