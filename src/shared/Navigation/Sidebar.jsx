@@ -97,10 +97,14 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
         
       }}
     >
+
+      
       <Box sx={{ px: 2.5, py: 3, display: 'inline-flex' }}>
       </Box>
 
-      
+<div class="padding">
+      <h1>FOCAL</h1>
+      </div>
 
       <Box sx={{ mb: 5, mx: 2.5 }} />
       <div class="padding">

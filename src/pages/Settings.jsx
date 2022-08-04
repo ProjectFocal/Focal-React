@@ -14,12 +14,11 @@ import Chip from '@mui/material/Chip';
 import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import { styled } from '@mui/material/styles';
+import Switch from '@mui/material/Switch';
 
 
 
-
-
-
+const label = { inputProps: { 'aria-label': 'Switch demo' } };
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -113,24 +112,22 @@ export default function BasicTabs() {
           <Tab label="Privacy" {...a11yProps(5)} />
         </Tabs>
       </Box>
-      <TabPanel value={value} index={0}>
 
-<card variant="outlined">
       
+
+      <TabPanel value={value} index={0}>
+<card variant="outlined">
       <Box sx={{ width: '20%' }}>
       <Stack spacing={3}>
         <Item> <Chip label="ExampleEmail@Gmail.com"/><Button href="https://material-ui.com/store/items/minimal-dashboard/" target="_blank" variant="contained">
              Change
           </Button></Item>
-        
           <Item> <Chip label="ExampleEmail@Gmail.com"/><Button href="https://material-ui.com/store/items/minimal-dashboard/" target="_blank" variant="contained">
              Change
           </Button></Item>
-        
           <Item> <Chip label="ExampleEmail@Gmail.com"/><Button href="https://material-ui.com/store/items/minimal-dashboard/" target="_blank" variant="contained">
              Change
           </Button></Item>
-        
       </Stack>
     </Box>
      
@@ -173,7 +170,14 @@ export default function BasicTabs() {
 
 
       <TabPanel value={value} index={2}>
-        Privacy
+      
+      <Switch {...label} defaultChecked />
+      <Switch {...label} defaultChecked />
+      <Switch {...label} defaultChecked />
+      <Switch {...label} defaultChecked />
+      
+    
+
         <div class="spacer"></div>
         <div class="spacer"></div>
         <div class="spacer"></div>
@@ -196,7 +200,10 @@ export default function BasicTabs() {
 
 
       <TabPanel value={value} index={3}>
-        Notifications
+      
+
+        
+      
         <div class="spacer"></div>
         <div class="spacer"></div>
         <div class="spacer"></div>
