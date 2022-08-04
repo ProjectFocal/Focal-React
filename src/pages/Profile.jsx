@@ -2,6 +2,7 @@ import { useState } from 'react';
 // material
 // components
 import Page from '../components/Page';
+import React, { Component }  from 'react';
 
 // mock
 

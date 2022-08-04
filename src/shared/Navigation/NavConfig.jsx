@@ -1,5 +1,6 @@
 // component
 import Iconify from '../../components/Iconify';
+import React, { Component }  from 'react';
 
 // ----------------------------------------------------------------------
 

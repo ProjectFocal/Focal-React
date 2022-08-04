@@ -3,6 +3,7 @@ import SimpleBarReact from 'simplebar-react';
 // @mui
 import { alpha, styled } from '@mui/material/styles';
 import { Box } from '@mui/material';
+import React, { Component }  from 'react';
 
 // ----------------------------------------------------------------------
 

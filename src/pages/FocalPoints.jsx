@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import React, { Component }  from 'react';
 // material
 // components
 import Page from '../components/Page';

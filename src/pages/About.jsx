@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import React, { Component }  from 'react';
 
 import Page from '../components/Page';
 
@@ -17,9 +18,8 @@ export default function About() {
 
 
   return (
-    
-    <h1>About</h1>
-      
-    
+    <>
+      <h1>About</h1>
+    </>    
   );
 }

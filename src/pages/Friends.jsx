@@ -1,11 +1,6 @@
 import { useState } from 'react';
-// material
-// components
+import React from 'react';
 import Page from '../components/Page';
-
-// mock
-
-// ----------------------------------------------------------------------
 
 export default function About() {
   // eslint-disable-next-line no-unused-vars

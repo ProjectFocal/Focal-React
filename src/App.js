@@ -16,6 +16,7 @@ import Profile from './pages/Profile'
 import Friends from'./pages/Friends'
 import FocalPoints from './pages/FocalPoints'
 import SpecialFeature from './pages/SpecialFeature'
+import React, { Component }  from 'react';
 
 function App(props) {
 
@@ -41,12 +42,22 @@ function Router() {
         { path: 'focalpoints', element: <FocalPoints /> },
         { path: 'about', element: <About /> },
         { path: 'settings', element: <Settings /> },
-        { path: 'login', element: <Login /> },
-        { path: 'signup', element: <SignUp /> },
-        { path: 'specialfeature', element: <SpecialFeature /> },
-        { path: '404', element: <NotFound /> },
       ],
     },  
+    {
+      path: '',
+      children: [
+        { path: 'login', element: <Login /> },
+        { path: 'signup', element: <SignUp /> },
+        { path: '404', element: <NotFound /> },
+      ],
+    },
+    {
+      path: 'specialfeature',
+      children: [
+        { path: '', element: <SpecialFeature /> },
+      ],
+    },
     { path: '*', element: <Navigate to="/404" replace /> },
   ]);
 }

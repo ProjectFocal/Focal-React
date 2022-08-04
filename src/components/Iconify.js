@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import React, { Component }  from 'react';
 // icons
 import { Icon } from '@iconify/react';
 // @mui
