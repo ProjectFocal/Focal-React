@@ -5,13 +5,20 @@ import Home from './pages/Home.jsx';
 import Footer from './shared/Footer.jsx';
 import About from './pages/About.jsx';
 import { Navigate, useRoutes } from 'react-router-dom';
-
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NavStructure from './shared/Navigation/NavStructure.jsx';
 import Settings from './pages/Settings';
 import NotFound from './pages/NotFound';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Login from './pages/Login'
+import SignUp from './pages/SignUp'
+import Profile from './pages/Profile'
+import Friends from'./pages/Friends'
+import FocalPoints from './pages/FocalPoints'
+import SpecialFeature from './pages/SpecialFeature'
 
 function App(props) {
+
   return (
     <>
       <BrowserRouter>
@@ -29,11 +36,17 @@ function Router() {
       element: <NavStructure />,
       children: [
         { path: '', element: <Home /> },
+        { path: 'profile', element: <Profile /> },
+        { path: 'friends', element: <Friends /> },
+        { path: 'focalpoints', element: <FocalPoints /> },
         { path: 'about', element: <About /> },
         { path: 'settings', element: <Settings /> },
+        { path: 'login', element: <Login /> },
+        { path: 'signup', element: <SignUp /> },
+        { path: 'specialfeature', element: <SpecialFeature /> },
         { path: '404', element: <NotFound /> },
       ],
-    },
+    },  
     { path: '*', element: <Navigate to="/404" replace /> },
   ]);
 }

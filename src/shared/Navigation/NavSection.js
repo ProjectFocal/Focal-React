@@ -7,7 +7,6 @@ import { Box, List, Collapse, ListItemText, ListItemIcon, ListItemButton } from 
 //
 import Iconify from '../../components/Iconify';
 
-// ----------------------------------------------------------------------
 
 const ListItemStyle = styled((props) => <ListItemButton disableGutters {...props} />)(({ theme }) => ({
   ...theme.typography.body2,
@@ -75,6 +74,9 @@ function NavItem({ item, active }) {
           />
         </ListItemStyle>
 
+        
+
+        
         <Collapse in={open} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>
             {children.map((item) => {
@@ -90,6 +92,8 @@ function NavItem({ item, active }) {
                     ...(isActiveSub && activeSubStyle),
                   }}
                 >
+
+                  
                   <ListItemIconStyle>
                     <Box
                       component="span"

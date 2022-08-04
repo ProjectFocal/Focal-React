@@ -1,15 +1,14 @@
+/* eslint-disable react/jsx-no-undef */
 import PropTypes from 'prop-types';
-import { useMemo } from 'react';
-// material
+import { useMemo } from 'react';import createTheme from '@mui/material/styles';
 import { CssBaseline } from '@mui/material';
-import { ThemeProvider as MUIThemeProvider, createTheme, StyledEngineProvider } from '@mui/material/styles';
-//
 import palette from './palette';
 import typography from './typography';
 import componentsOverride from './overrides';
 import shadows, { customShadows } from './shadows';
 
 // ----------------------------------------------------------------------
+
 
 ThemeProvider.propTypes = {
   children: PropTypes.node,

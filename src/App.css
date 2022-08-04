@@ -1,0 +1,41 @@
+.padding {
+    padding-top:10px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+  }
+
+.navbar.active {
+  background: #D3D3D3
+}
+
+
+.box-content {
+  overflow: auto;
+  border-radius: 8px;
+}
+
+.sideNavPad {
+  padding-top: 5px;
+  padding-right: 5px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+}
+
+.spacer {
+  padding-top: 30px;
+  padding-right: 5px;
+  padding-bottom: 5px;
+  padding-left: 30px;
+}
+
+.searchBox{
+  padding-left: 1400px;
+}
+
+.center {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+

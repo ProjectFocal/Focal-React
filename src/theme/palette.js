@@ -32,18 +32,18 @@ const PRIMARY = {
   lighter: '#D1E9FC',
   light: '#76B0F1',
   main: '#2065D1',
-  dark: '#103996',
+  dark: '#000000',
   darker: '#061B64',
-  contrastText: '#fff',
+  contrastText: '#FFFFFF',
 };
 
 const SECONDARY = {
   lighter: '#D6E4FF',
-  light: '#84A9FF',
+  light: '#fafbff',
   main: '#3366FF',
   dark: '#1939B7',
   darker: '#091A7A',
-  contrastText: '#fff',
+  contrastText: '#FFFFFF',
 };
 
 const INFO = {

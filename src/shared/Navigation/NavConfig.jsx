@@ -12,15 +12,31 @@ const navConfig = [
     icon: getIcon('eva:home-outline'),
   },
   {
-    title: 'About',
-    path: '/about',
-    icon: getIcon('eva:info-outline'),
+    title: 'Profile',
+    path: '/profile',
+    icon: getIcon('eva:person-outline'),
+  },
+  {
+    title: 'Friends',
+    path: '/friends',
+    icon: getIcon('akar-icons:people-group'),
+  },
+  {
+    title: 'FocalPoints',
+    path: '/focalpoints',
+    icon: getIcon('material-symbols:hub-outline'),
   },
   {
     title: 'Settings',
     path: '/settings',
     icon: getIcon('eva:settings-outline'),
-  }
+  },
+  {
+    title: 'Help',
+    path: '/about',
+    icon: getIcon('bx:help-circle'),
+  },
+  
 ];
 
 export default navConfig;

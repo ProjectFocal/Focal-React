@@ -57,6 +57,8 @@ export default function Scrollbar({ children, sx, ...other }) {
     <RootStyle>
       <SimpleBarStyle timeout={500} clickOnTrack={false} sx={sx} {...other}>
         {children}
+
+        
       </SimpleBarStyle>
     </RootStyle>
   );
