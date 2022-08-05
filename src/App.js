@@ -18,6 +18,8 @@ import FocalPoints from './pages/FocalPoints'
 import SpecialFeature from './pages/SpecialFeature'
 import React, { Component }  from 'react';
 
+
+
 function App(props) {
 
   return (
@@ -63,3 +65,7 @@ function Router() {
 }
 
 export default App;
+
+
+
+

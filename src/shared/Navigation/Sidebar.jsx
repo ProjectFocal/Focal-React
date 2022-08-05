@@ -12,6 +12,8 @@ import Badge from '@mui/material/Badge';
 import Divider from '@mui/material/Divider';
 import Chip from '@mui/material/Chip';
 import React, { Component }  from 'react';
+import Typed from 'typed.js';
+
 
 
 
@@ -73,10 +75,13 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
   var curHr = today.getHours()
 
   var userName = "User";
-
+  
+  if (curHr = 3){
+    var timeMessage = "SPOOKY HOUR"
+  }
   if (curHr < 12) {
     var timeMessage = "Good morning,";
-  } else if (curHr < 18) {
+  } if (curHr < 18) {
     var timeMessage = "Good afternoon,";
   } else {
     var timeMessage = "Good evening,";
@@ -99,7 +104,6 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
       sx={{
         height: 1,
         '& .simplebar-content': { height: 1, display: 'flex', flexDirection: 'column' },
-        
       }}
     >
       <Box sx={{ px: 2.5, py: 3, display: 'inline-flex' }}>
@@ -107,6 +111,7 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
   <div class="padding">
       <h1>FOCAL</h1>
       </div>
+      
   <Box sx={{ mb: 5, mx: 2.5 }} />
     <div class="padding">
       <Stack direction="row" spacing={2}>

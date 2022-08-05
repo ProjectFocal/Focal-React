@@ -6,7 +6,8 @@
   }
 
 .navbar.active {
-  background: #152238
+  background: #152238;
+  
 }
 
 
@@ -29,8 +30,10 @@
   padding-left: 30px;
 }
 
-.searchBox{
-  padding-right: 1370px;
+.navbar {
+  float:left;
+  
+
 }
 
 .center {
@@ -39,3 +42,9 @@
   padding: 10px;
 }
 
+.ProfilePadding {
+  padding-top: 30px;
+  padding-right: 5px;
+  padding-bottom: 5px;
+  padding-left: 30px;
+}

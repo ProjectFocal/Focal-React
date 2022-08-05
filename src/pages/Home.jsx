@@ -14,7 +14,7 @@ import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
 import GlobalStyles from '@mui/material/GlobalStyles';
 import Container from '@mui/material/Container';
-
+import Typed from 'typed.js';
 
 
 const tiers = [
@@ -59,6 +59,7 @@ const tiers = [
 
 
 
+
 function PricingContent() {
   return (
     <React.Fragment>
@@ -73,13 +74,14 @@ function PricingContent() {
           align="center"
           color="text.primary"
           gutterBottom
+          
         >
-          FOCAL
-          <div class="spacer"></div>
+          FOCAL 
+         
         </Typography>
         <Typography variant="h5" align="center" color="text.secondary" component="p">
-         Welcome to Focal. This is example text because its is 3 am in the morning and i am to tired to come up with something to actually be presntable to users
-        </Typography>
+        Welcome to Focal. This is example text because it is 3 am in the morning and i am to tired to come up with something to actually be presentable to users
+                </Typography>
       </Container>
       <div class="spacer"></div>
       {/* End hero unit */}

@@ -130,56 +130,62 @@ export default function DashboardNavbar({ onOpenSidebar }) {
   
 
   return (
-    <RootStyle className="navbar active">
-      <ToolbarStyle>
-        <IconButton onClick={onOpenSidebar} sx={{ mr: 1, color: 'text.primary', display: { lg: 'none' } }}>
-          <Iconify icon="eva:menu-2-fill" />
-        </IconButton>
+
+
   
 
-        <div class="searchBox">
-        <Search onClick={handleOpen}>
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Search…"
-              inputProps={{ 'aria-label': 'search' }}
-            />
-          </Search>
-  
-      <Modal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
-        <Box sx={style} className="box-content">
-          <Typography id="modal-modal-title" variant="h6" component="h2">
-            Whats On Your Mind?
-          </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-          <Autocomplete
-        multiple
-        id="tags-outlined"
-        options={FocalSearchFilters}
-        getOptionLabel={(option) => option.title}
-        defaultValue={[FocalSearchFilters[3]]}
-        filterSelectedOptions
-        renderInput={(params) => (
-          <TextField
-            {...params}
-            label=""
-            placeholder="Type In Me!"
-          />
-        )}
-      />
-          </Typography>
-        </Box>
-      </Modal>
-    </div>
+      <RootStyle className="navbar active">
+        <ToolbarStyle>
+          <IconButton onClick={onOpenSidebar} sx={{ mr: 1, color: 'text.primary', }}>
+            <Iconify icon="eva:menu-2-fill" />
+          </IconButton>
+      
+ 
+          
+
+        <Search onClick={handleOpen} className="">
+          <SearchIconWrapper>
+            <SearchIcon />
+          </SearchIconWrapper>
+          <StyledInputBase
+            placeholder="Search…"
+            inputProps={{ 'aria-label': 'search' }} />
+        </Search>
+
+
+
+        <Modal
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-modal-description"
+        >
+          <Box sx={style} className="box-content">
+            <Typography id="modal-modal-title" variant="h6" component="h2">
+              Whats On Your Mind?
+            </Typography>
+            <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+              <Autocomplete
+                multiple
+                id="tags-outlined"
+                options={FocalSearchFilters}
+                getOptionLabel={(option) => option.title}
+                defaultValue={[FocalSearchFilters[3]]}
+                filterSelectedOptions
+                renderInput={(params) => (
+                  <TextField
+                    {...params}
+                    label=""
+                    placeholder="Type In Me!" />
+                )} />
+            </Typography>
+          </Box>
+        </Modal>
+
       </ToolbarStyle>
     </RootStyle>
+    
+   
    
   );
 }
