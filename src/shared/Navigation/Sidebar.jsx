@@ -16,8 +16,8 @@ import { createTheme } from '@mui/material/styles';
 import { blue, blueGrey } from '@mui/material/colors';
 import Chip from '@mui/material/Chip';
 import React, { Component }  from 'react';
-  
-  
+
+
 
 
 
@@ -90,7 +90,6 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
   }, [pathname]);
 
   const renderContent = (
-    
     <Scrollbar 
       sx={{
         height: 1,
@@ -144,7 +143,6 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
         </Stack>
       </Box>
     </Scrollbar>
-    
   );
 
   return (

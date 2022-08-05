@@ -37,7 +37,7 @@ export default function ControlledTreeView() {
 
 
   return (
-    
+    <div class="padding">
     <Box sx={{ height: 700, flexGrow: 1, maxWidth: 400, overflowY: 'auto' }}>
       <Box sx={{ mb: 1 }}>
         <Button onClick={handleExpandClick}>
@@ -98,6 +98,7 @@ export default function ControlledTreeView() {
         </TreeItem>
       </TreeView>
     </Box>
+    </div>
       
     
   );
