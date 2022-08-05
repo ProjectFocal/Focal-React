@@ -1,4 +1,4 @@
-/* eslint-disable no-unused-vars */
+//Mui COMPS
 import PropTypes from 'prop-types';
 import { useEffect } from 'react';
 import { Link as RouterLink, useLocation } from 'react-router-dom';
@@ -10,12 +10,10 @@ import NavSection from './NavSection';
 import navConfig from './NavConfig';
 import Badge from '@mui/material/Badge';
 import Divider from '@mui/material/Divider';
-import { ThemeProvider } from '@mui/system';
-import makeStyles from '@mui/material/styles';
-import { createTheme } from '@mui/material/styles';
-import { blue, blueGrey } from '@mui/material/colors';
 import Chip from '@mui/material/Chip';
 import React, { Component }  from 'react';
+
+
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
   '& .MuiBadge-badge': {
@@ -47,7 +45,6 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
   
 }));
 
-
 const SmallAvatar = styled(Avatar)(({ theme }) => ({
   width: 22,
   height: 22,
@@ -56,8 +53,6 @@ const SmallAvatar = styled(Avatar)(({ theme }) => ({
 
 const DRAWER_WIDTH = 230;
 
-
-
 const RootStyle = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('lg')]: {
     flexShrink: 0,
@@ -65,14 +60,13 @@ const RootStyle = styled('div')(({ theme }) => ({
   },
 }));
 
-
-// ----------------------------------------------------------------------
-
 DashboardSidebar.propTypes = {
   isOpenSidebar: PropTypes.bool,
   onCloseSidebar: PropTypes.func,
 };
 
+
+//Get User Time
 export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
 
   var today = new Date()
@@ -89,18 +83,17 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
   }
 
   var status = timeMessage + " "  + userName;
-
   const { pathname } = useLocation();
-
   const isDesktop = useResponsive('up', 'lg');
 
   useEffect(() => {
     if (isOpenSidebar) {
       onCloseSidebar();
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname]);
 
+
+//Rendering The Side Nav
   const renderContent = (
     <Scrollbar 
       sx={{
@@ -109,45 +102,35 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
         
       }}
     >
-
-      
       <Box sx={{ px: 2.5, py: 3, display: 'inline-flex' }}>
       </Box>
-
-<div class="padding">
+  <div class="padding">
       <h1>FOCAL</h1>
       </div>
-
-      <Box sx={{ mb: 5, mx: 2.5 }} />
-      <div class="padding">
+  <Box sx={{ mb: 5, mx: 2.5 }} />
+    <div class="padding">
       <Stack direction="row" spacing={2}>
-      <StyledBadge
-        overlap="circular"
-        anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-        variant="dot"
+         <StyledBadge
+           overlap="circular"
+           anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+           variant="dot"
       >
         <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
         
       </StyledBadge>
     </Stack>
-    </div>
-
-    <div class="padding">
+  </div>
+  <div class="padding">
     <Stack direction="row" spacing={1}>
       <Chip label={ status } />
     </Stack>
-    </div>
-    
+  </div>
     <Divider variant="middle"/>
       <NavSection navConfig={navConfig} />
-
-      <Divider variant="middle" />
-
-
-
-      <Box sx={{ flexGrow: 1 }} />
-      <Box sx={{ px: 0, pb: 0, mt: 0}}>
-        <Stack alignItems="center" spacing={20} sx={{ pt: 50, borderRadius: 2, position: 'relative' }}>
+       <Divider variant="middle" />
+        <Box sx={{ flexGrow: 1 }} />
+        <Box sx={{ px: 0, pb: 0, mt: 0}}>
+         <Stack alignItems="center" spacing={20} sx={{ pt: 50, borderRadius: 2, position: 'relative' }}>
           <Button href="https://material-ui.com/store/items/minimal-dashboard/" target="_blank" variant="contained">
              Log Out 
           </Button>
@@ -155,6 +138,7 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
       </Box>
     </Scrollbar>
   );
+
 
   return (
     <Paper elevation={6}>
@@ -171,7 +155,6 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
           {renderContent}
         </Drawer>
       )}
-
       {isDesktop && (
         <Drawer
           open
@@ -186,7 +169,6 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
         >
           {renderContent}
         </Drawer>
-        
       )}
     </RootStyle>
     </Paper>
