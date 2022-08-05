@@ -17,10 +17,6 @@ import { blue, blueGrey } from '@mui/material/colors';
 import Chip from '@mui/material/Chip';
 import React, { Component }  from 'react';
 
-
-
-
-
 const StyledBadge = styled(Badge)(({ theme }) => ({
   '& .MuiBadge-badge': {
     backgroundColor: '#44b700',
@@ -78,6 +74,22 @@ DashboardSidebar.propTypes = {
 };
 
 export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
+
+  var today = new Date()
+  var curHr = today.getHours()
+
+  var userName = "User";
+
+  if (curHr < 12) {
+    var timeMessage = "Good morning,";
+  } else if (curHr < 18) {
+    var timeMessage = "Good afternoon,";
+  } else {
+    var timeMessage = "Good evening,";
+  }
+
+  var status = timeMessage + " "  + userName;
+
   const { pathname } = useLocation();
 
   const isDesktop = useResponsive('up', 'lg');
@@ -122,8 +134,7 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
 
     <div class="padding">
     <Stack direction="row" spacing={1}>
-      <Chip label="Good *timeOfDay* *user* "/>
-      
+      <Chip label={ status } />
     </Stack>
     </div>
     

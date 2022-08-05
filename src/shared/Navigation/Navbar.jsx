@@ -217,7 +217,7 @@ export default function DashboardNavbar({ onOpenSidebar }) {
       >
         <Box sx={style} className="box-content">
           <Typography id="modal-modal-title" variant="h6" component="h2">
-            Whats On Your Mind?
+            What are you looking?
           </Typography>
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
           <Autocomplete
@@ -231,7 +231,7 @@ export default function DashboardNavbar({ onOpenSidebar }) {
           <TextField
             {...params}
             label=""
-            placeholder="Type In Me!"
+            placeholder="Search by category"
           />
         )}
       />
