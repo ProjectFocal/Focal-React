@@ -83,7 +83,7 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
     var timeMessage = "Good morning,";
   } if (curHr < 18) {
     var timeMessage = "Good afternoon,";
-  } else {
+  } if (curHr <24) {
     var timeMessage = "Good evening,";
   }
 

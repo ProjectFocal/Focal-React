@@ -7,7 +7,7 @@
 
 .navbar.active {
   background: #152238;
-  
+  padding-right: 1500px;
 }
 
 
@@ -31,7 +31,7 @@
 }
 
 .navbar {
-  float:left;
+  padding-left: 1500px;
   
 
 }

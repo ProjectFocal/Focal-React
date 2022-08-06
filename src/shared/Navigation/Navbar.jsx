@@ -141,9 +141,9 @@ export default function DashboardNavbar({ onOpenSidebar }) {
           </IconButton>
       
  
-          
+    
 
-        <Search onClick={handleOpen} className="">
+        <Search onClick={handleOpen} >
           <SearchIconWrapper>
             <SearchIcon />
           </SearchIconWrapper>
@@ -151,8 +151,7 @@ export default function DashboardNavbar({ onOpenSidebar }) {
             placeholder="Search…"
             inputProps={{ 'aria-label': 'search' }} />
         </Search>
-
-
+        
 
         <Modal
           open={open}
