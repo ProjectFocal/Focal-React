@@ -27,16 +27,18 @@ const navConfig = [
     path: '/focalpoints',
     icon: getIcon('material-symbols:hub-outline'),
   },
+  
   {
     title: 'Settings',
     path: '/settings',
     icon: getIcon('eva:settings-outline'),
   },
   {
-    title: 'Help',
+    title: 'About',
     path: '/about',
     icon: getIcon('bx:help-circle'),
   },
+ 
   
 ];
 

@@ -112,19 +112,7 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
       <h1>FOCAL</h1>
       </div>
       
-  <Box sx={{ mb: 5, mx: 2.5 }} />
-    <div class="padding">
-      <Stack direction="row" spacing={2}>
-         <StyledBadge
-           overlap="circular"
-           anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-           variant="dot"
-      >
-        <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
-        
-      </StyledBadge>
-    </Stack>
-  </div>
+  
   <div class="padding">
     <Stack direction="row" spacing={1}>
       <Chip label={ status } />
@@ -136,7 +124,7 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
         <Box sx={{ flexGrow: 1 }} />
         <Box sx={{ px: 0, pb: 0, mt: 0}}>
          <Stack alignItems="center" spacing={20} sx={{ pt: 50, borderRadius: 2, position: 'relative' }}>
-          <Button href="https://material-ui.com/store/items/minimal-dashboard/" target="_blank" variant="contained">
+          <Button href="login" target="_blank" variant="contained">
              Log Out 
           </Button>
         </Stack>

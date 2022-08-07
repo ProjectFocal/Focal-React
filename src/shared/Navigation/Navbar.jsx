@@ -26,7 +26,6 @@ import Grow from '@mui/material/Grow';
 import ClickAwayListener from '@mui/material/ClickAwayListener';
 import Menu from '@mui/icons-material/Menu';
 
-
 //Icons
 import ArchiveIcon from '@mui/icons-material/Archive';
 import FileCopyIcon from '@mui/icons-material/FileCopy';
@@ -128,22 +127,26 @@ export default function DashboardNavbar({ onOpenSidebar }) {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   
+  
 
   return (
 
 
-  
-
-      <RootStyle className="navbar active">
-        <ToolbarStyle>
-          <IconButton onClick={onOpenSidebar} sx={{ mr: 1, color: 'text.primary', }}>
-            <Iconify icon="eva:menu-2-fill" />
-          </IconButton>
-      
- 
     
 
-        <Search onClick={handleOpen} >
+
+      <RootStyle className="navbar active">
+
+        <ToolbarStyle>
+          
+          
+          <IconButton onClick={onOpenSidebar} sx={{ flexGrow: 1 }}>
+            <Iconify icon="eva:menu-2-fill" />
+          </IconButton>
+          
+              
+    
+        <Search onClick={handleOpen} sx={{ flexGrow: 1 }}>
           <SearchIconWrapper>
             <SearchIcon />
           </SearchIconWrapper>
@@ -152,7 +155,6 @@ export default function DashboardNavbar({ onOpenSidebar }) {
             inputProps={{ 'aria-label': 'search' }} />
         </Search>
         
-
         <Modal
           open={open}
           onClose={handleClose}
@@ -182,9 +184,10 @@ export default function DashboardNavbar({ onOpenSidebar }) {
         </Modal>
 
       </ToolbarStyle>
+
+      
     </RootStyle>
     
-   
    
   );
 }

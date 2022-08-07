@@ -1,3 +1,9 @@
+
+.roundcorns {
+  flex:1; /*which is equal to 1 portion of width */
+
+}
+
 .padding {
     padding-top:10px;
     padding-right: 20px;
@@ -6,8 +12,8 @@
   }
 
 .navbar.active {
-  background: #152238;
-  padding-right: 1500px;
+  background: #23333f;
+  float: left
 }
 
 
@@ -31,9 +37,7 @@
 }
 
 .navbar {
-  padding-left: 1500px;
-  
-
+  float: left
 }
 
 .center {
@@ -47,4 +51,89 @@
   padding-right: 5px;
   padding-bottom: 5px;
   padding-left: 30px;
+}
+
+.aboutCards {
+  padding-top:10px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  float: left
+  
+}
+
+.Title {
+  padding-top:2px;
+  padding-right: 10px;
+  padding-bottom: 2px;
+  padding-left: 10px;
+  float: left
+  
+}
+
+
+.svg-container {
+  background: #ffffff;
+  padding: 3em;
+  
+}
+.svg-container svg {
+  max-width: 650px;
+}
+
+
+
+.line {
+  fill: none;
+  stroke: #00b3e3;
+  stroke-miterlimit: 10;
+  stroke-width: 0.5;
+  animation: line-pulse 5s ease infinite;
+  -moz-animation: line-pulse 5s ease infinite;
+ /* Firefox */
+  -webkit-animation: line-pulse 5s ease infinite;
+ /* Safari and Chrome */
+  -o-animation: line-pulse 5s ease infinite;
+ /* Opera */
+}
+.circle {
+  fill: transparent;
+  transition: fill 300ms ease;
+}
+.blue-bg {
+  fill: #00b3e3;
+  animation: circle-pulse 10s linear infinite;
+  -moz-animation: circle-pulse 10s linear infinite;
+ /* Firefox */
+  -webkit-animation: circle-pulse 10s linear infinite;
+ /* Safari and Chrome */
+  -o-animation: circle-pulse 10s linear infinite;
+ /* Opera */
+  -webkit-animation-delay: 3s;
+ /* Chrome, Safari, Opera */
+  animation-delay: 3s;
+}
+@keyframes circle-pulse {
+  0%, 100% {
+    fill: #2065D1;
+ }
+  50% {
+    fill: rgb(255, 255, 255);
+ }
+}
+@keyframes line-pulse {
+  0%, 100% {
+    stroke: #405869;
+ }
+  50% {
+    stroke: #fff;
+ }
+}
+@keyframes svg-pulse {
+  0%, 100% {
+    stroke: #23333f;
+ }
+  50% {
+    stroke: #fff;
+ }
 }
