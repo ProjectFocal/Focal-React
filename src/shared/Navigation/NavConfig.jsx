@@ -1,7 +1,6 @@
 // component
 import Iconify from '../../components/Iconify';
 import React, { Component }  from 'react';
-
 // ----------------------------------------------------------------------
 
 const getIcon = (name) => <Iconify icon={name} width={28} height={28} />;

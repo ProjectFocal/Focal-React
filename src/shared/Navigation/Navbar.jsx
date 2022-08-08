@@ -130,22 +130,16 @@ export default function DashboardNavbar({ onOpenSidebar }) {
   
 
   return (
-
-
-    
-
-
-      <RootStyle className="navbar active">
-
-        <ToolbarStyle>
+      <RootStyle>
+        <ToolbarStyle className="navbar active">
           
           
-          <IconButton onClick={onOpenSidebar} sx={{ flexGrow: 1 }}>
-            <Iconify icon="eva:menu-2-fill" />
+        <IconButton onClick={onOpenSidebar} sx={{ mr: 1, color: 'text.primary', display: { lg: 'none' } }}>
+          <Iconify icon="eva:menu-2-fill" />
           </IconButton>
           
               
-    
+    <div class="navbar">
         <Search onClick={handleOpen} sx={{ flexGrow: 1 }}>
           <SearchIconWrapper>
             <SearchIcon />
@@ -182,7 +176,7 @@ export default function DashboardNavbar({ onOpenSidebar }) {
             </Typography>
           </Box>
         </Modal>
-
+        </div>
       </ToolbarStyle>
 
       

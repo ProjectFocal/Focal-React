@@ -12,9 +12,9 @@ import Badge from '@mui/material/Badge';
 import Divider from '@mui/material/Divider';
 import Chip from '@mui/material/Chip';
 import React, { Component }  from 'react';
-import Typed from 'typed.js';
-
-
+import MailIcon from '@mui/icons-material/Mail';
+import HubIcon from '@mui/icons-material/Hub';
+import FeedbackIcon from '@mui/icons-material/Feedback';
 
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
@@ -47,6 +47,14 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
   
 }));
 
+const Item = styled(Paper)(({ theme }) => ({
+  backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+  ...theme.typography.body2,
+  padding: theme.spacing(1),
+  textAlign: 'center',
+  color: theme.palette.text.secondary,
+}));
+
 const SmallAvatar = styled(Avatar)(({ theme }) => ({
   width: 22,
   height: 22,
@@ -70,24 +78,24 @@ DashboardSidebar.propTypes = {
 
 //Get User Time
 export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
-
+  var Pfp = "N"
   var today = new Date()
   var curHr = today.getHours()
-
-  var userName = "User";
+ 
+  var userName = "Nathan Aruna";
   
   if (curHr = 3){
     var timeMessage = "SPOOKY HOUR"
   }
   if (curHr < 12) {
-    var timeMessage = "Good morning,";
+    var timeMessage = "Good morning.";
   } if (curHr < 18) {
-    var timeMessage = "Good afternoon,";
+    var timeMessage = "Good afternoon.";
   } if (curHr <24) {
-    var timeMessage = "Good evening,";
+    var timeMessage = "Good evening.";
   }
 
-  var status = timeMessage + " "  + userName;
+  var status = timeMessage 
   const { pathname } = useLocation();
   const isDesktop = useResponsive('up', 'lg');
 
@@ -106,18 +114,61 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
         '& .simplebar-content': { height: 1, display: 'flex', flexDirection: 'column' },
       }}
     >
-      <Box sx={{ px: 2.5, py: 3, display: 'inline-flex' }}>
+      <Box sx={{ px: 2.5, py: 0, display: 'inline-flex' }}>
       </Box>
-  <div class="padding">
-      <h1>FOCAL</h1>
+    
+    <div class="dayStatusBox">
+      <card variant="outlined">
+            <Box sx={{ width: '100%', }}>
+            <Stack spacing={0}>
+            <Item>
+            <Stack direction="row" spacing={2}>
+
+    <div class="dayStatusChip">
+    <Chip avatar={<Avatar>N</Avatar>} label="Nathan Aruna The Great" />
+    </div>
+      </Stack>
+      </Item> 
+      </Stack>
+      </Box>   
+      </card>
       </div>
+
+
+      <div class="dayStatusBox">
+      <card variant="outlined">
+            <Box sx={{ width: '100%', }}>
+            <Stack spacing={0}>
+            <Item>
+            <Stack direction="row" spacing={2}>
+
+    <div class="dayStatusChip">
+      <div class="padding">
+    <Badge badgeContent={4} color="primary">
+      <MailIcon color="action" />
+    </Badge>
+    </div>
+    <div class="padding">
+    <Badge badgeContent={4} color="primary">
+      <HubIcon color="action" />
+    </Badge>
+    </div>
+
+    <div class="padding">
+    <Badge badgeContent={4} color="primary">
+      <FeedbackIcon color="action" />
+    </Badge>
+    </div>
+    </div>
+      </Stack>
+      </Item> 
+      </Stack>
+      </Box>   
+      </card>
+      </div>
+    
+    
       
-  
-  <div class="padding">
-    <Stack direction="row" spacing={1}>
-      <Chip label={ status } />
-    </Stack>
-  </div>
     <Divider variant="middle"/>
       <NavSection navConfig={navConfig} />
        <Divider variant="middle" />

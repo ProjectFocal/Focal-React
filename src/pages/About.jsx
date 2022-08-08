@@ -25,6 +25,10 @@ export default function About() {
 
   return (
     <> 
+    
+    <div class="padding">
+    <h2>Developers:</h2>
+    </div>
     <div class="aboutCards">
       <Card sx={{ maxWidth: 345 }}>
       <CardMedia
@@ -42,8 +46,8 @@ export default function About() {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
+        <Button href="https://github.com/trulyNathan2" size="small">GitHub</Button>
+        
       </CardActions>
     </Card>
     </div>
@@ -65,9 +69,31 @@ export default function About() {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
+        <Button href="https://github.com/domilx" size="small">GitHub</Button>
+        
       </CardActions>
+    </Card>
+    </div>
+    
+    <div class="aboutCards2">
+    
+    <h2>How It Started:</h2>
+      <Card sx={{ maxWidth: 345 }}>
+      <CardMedia
+        component="img"
+        alt="green iguana"
+        height="140"
+        image="https://cdn.discordapp.com/attachments/923593657486049342/1006062385250963527/unknown.png"
+      />
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="div">
+          
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+       You're always just one message away from wokring on large scale projects, that teach you many usefull skills.
+        </Typography>
+      </CardContent>
+      
     </Card>
     </div>
     </>    

@@ -17,7 +17,7 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import focalpoint from './FocalPoint.css'
-
+import "./FocalPoint.css"
 
 
 function Copyright(props) {
@@ -45,7 +45,7 @@ export default function SignInSide() {
         <Grid
           item
           xs={false}
-          sm={4}
+          sm={1}
           md={7}
           sx={{
           }}
@@ -132,7 +132,7 @@ export default function SignInSide() {
           <Box
             sx={{
               
-              my: 8,
+              my: 5,
               mx: 4,
               display: 'flex',
               flexDirection: 'column',
@@ -140,11 +140,11 @@ export default function SignInSide() {
               
             }}
           >
-            <Box component="form" noValidate sx={{ mt: 2 }}>
+            <Box component="form" noValidate sx={{ mt: 5 }}>
               
-
+            <div class="center">
               <h1>Focal</h1>
-              
+            </div>
               <Button variant="outlined" href="#Create FocalPoin">
                Create FocalPoint
               </Button>
