@@ -1,6 +1,7 @@
+//MUI Comps
+import * as React from 'react';
 import { useState } from 'react';
 import Page from '../components/Page';
-import * as React from 'react';
 import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
@@ -19,6 +20,7 @@ import Switch from '@mui/material/Switch';
 
 
 
+//Const Start 
 const label = { inputProps: { 'aria-label': 'Switch demo' } };
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -50,7 +52,6 @@ function TabPanel(props) {
   );
 }
 
-
 const bull = (
   <Box
     component="span"
@@ -59,6 +60,9 @@ const bull = (
     •
   </Box>
 );
+//Const End 
+
+
 
 
 function MyFormHelperText() {
@@ -89,7 +93,7 @@ function a11yProps(index) {
 }
 
 export default function BasicTabs() {
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = React.useState(0)
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -120,15 +124,8 @@ export default function BasicTabs() {
 <card variant="outlined">
       <Box sx={{ width: '20%' }}>
       <Stack spacing={3}>
-        <Item> <Chip label="ExampleEmail@Gmail.com"/><Button href="https://material-ui.com/store/items/minimal-dashboard/" target="_blank" variant="contained">
-             Change
-          </Button></Item>
-          <Item> <Chip label="ExampleEmail@Gmail.com"/><Button href="https://material-ui.com/store/items/minimal-dashboard/" target="_blank" variant="contained">
-             Change
-          </Button></Item>
-          <Item> <Chip label="ExampleEmail@Gmail.com"/><Button href="https://material-ui.com/store/items/minimal-dashboard/" target="_blank" variant="contained">
-             Change
-          </Button></Item>
+        <Item> <Chip label="ExampleEmail@Gmail.com"/></Item>
+          
       </Stack>
     </Box>
      
@@ -171,11 +168,25 @@ export default function BasicTabs() {
 
 
       <TabPanel value={value} index={2}>
-      
+      <div className='padding'> 
+      <Chip label="User Messages"/>
       <Switch {...label} defaultChecked />
+      </div>
+
+      <div className='padding'>
+      <Chip label="Focal Points"/>
       <Switch {...label} defaultChecked />
+      </div>
+
+      <div className='padding'>
+      <Chip label="Focal Messages"/>
       <Switch {...label} defaultChecked />
+      </div>
+
+      <div className='padding'>
+      <Chip label="All Notifications"/>
       <Switch {...label} defaultChecked />
+      </div>
       
     
 

@@ -13,7 +13,8 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Page from '../components/Page';
-
+import focalpoint from './FocalPoint.css'
+import "./FocalPoint.css"
 
 function Copyright(props) {
   return (
@@ -42,7 +43,9 @@ export default function SignInSide() {
 
   return (
     <ThemeProvider theme={theme}>
+      
       <Grid container component="main" sx={{ height: '100vh' }}>
+        
         <CssBaseline />
         <Grid
           item
@@ -50,7 +53,6 @@ export default function SignInSide() {
           sm={4}
           md={7}
           sx={{
-            backgroundImage: 'url(https://source.unsplash.com/random)',
             backgroundRepeat: 'no-repeat',
             backgroundColor: (t) =>
               t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
@@ -58,6 +60,9 @@ export default function SignInSide() {
             backgroundPosition: 'center',
           }}
         />
+        
+
+        
         <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
           <Box
             sx={{
@@ -68,11 +73,17 @@ export default function SignInSide() {
               alignItems: 'center',
             }}
           >
-            <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-              <LockOutlinedIcon />
-            </Avatar>
+
+            
+            <div class="padding">
+             <Avatar
+          alt="Remy Sharp"
+          src="https://avatars.githubusercontent.com/u/110752227?s=200&v=4"
+          sx={{ width: 60, height: 60 }}
+/>
+</div>
             <Typography component="h1" variant="h5">
-              Sign in
+              Sign In To Focal
             </Typography>
             <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
               <TextField

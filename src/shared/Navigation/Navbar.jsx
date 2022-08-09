@@ -25,6 +25,8 @@ import MenuList from '@mui/material/MenuList';
 import Grow from '@mui/material/Grow';
 import ClickAwayListener from '@mui/material/ClickAwayListener';
 import Menu from '@mui/icons-material/Menu';
+import SpeedDial from '@mui/material/SpeedDial';
+import SpeedDialAction from '@mui/material/SpeedDialAction';
 
 //Icons
 import ArchiveIcon from '@mui/icons-material/Archive';
@@ -34,12 +36,17 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import EditIcon from '@mui/icons-material/Edit';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
+import SaveIcon from '@mui/icons-material/Save';
+import PrintIcon from '@mui/icons-material/Print';
+import ShareIcon from '@mui/icons-material/Share';
+import SpeedDialIcon from '@mui/material/SpeedDialIcon';
 
 
-
+//Const Start
 const DRAWER_WIDTH = 200;
 const APPBAR_MOBILE = 64;
 const APPBAR_DESKTOP = 70;
+
 
 
 
@@ -114,14 +121,19 @@ const ToolbarStyle = styled(Toolbar)(({ theme }) => ({
     padding: theme.spacing(0, 5),
   },
 }));
+//Const End
 
 
-// ----------------------------------------------------------------------
 
+
+//idek what this does
 DashboardNavbar.propTypes = {
   onOpenSidebar: PropTypes.func,
 };
 
+
+
+//Top nav open/close handeling
 export default function DashboardNavbar({ onOpenSidebar }) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
@@ -134,20 +146,28 @@ export default function DashboardNavbar({ onOpenSidebar }) {
         <ToolbarStyle className="navbar active">
           
           
-        <IconButton onClick={onOpenSidebar} sx={{ mr: 1, color: 'text.primary', display: { lg: 'none' } }}>
+          <IconButton onClick={onOpenSidebar} sx={{ mr: 1, color: 'text.primary', display: { lg: 'none' } }}>
           <Iconify icon="eva:menu-2-fill" />
           </IconButton>
           
-              
-    <div class="navbar">
+          
+      
+        
+        <div className='navbar'>
         <Search onClick={handleOpen} sx={{ flexGrow: 1 }}>
           <SearchIconWrapper>
             <SearchIcon />
-          </SearchIconWrapper>
-          <StyledInputBase
+            </SearchIconWrapper>
+            <StyledInputBase
             placeholder="Search…"
             inputProps={{ 'aria-label': 'search' }} />
+            
         </Search>
+        </div>
+        <div className='navbar'>
+          <Button variant="outlined">Create</Button>
+          </div>
+
         
         <Modal
           open={open}
@@ -176,13 +196,11 @@ export default function DashboardNavbar({ onOpenSidebar }) {
             </Typography>
           </Box>
         </Modal>
-        </div>
-      </ToolbarStyle>
 
-      
+        
+
+      </ToolbarStyle>
     </RootStyle>
-    
-   
   );
 }
 

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { useEffect } from 'react';
 import { Link as RouterLink, useLocation } from 'react-router-dom';
 import { styled } from '@mui/material/styles';
-import { Box, Link, Button, Drawer, Typography, Avatar, Stack, Paper } from '@mui/material';
+import { Box, Link, Button, Drawer, Typography, Avatar, Stack, Paper, ButtonBase, ButtonGroup } from '@mui/material';
 import useResponsive from './useResponsive';
 import Scrollbar from './Scrollbar';
 import NavSection from './NavSection';
@@ -12,11 +12,19 @@ import Badge from '@mui/material/Badge';
 import Divider from '@mui/material/Divider';
 import Chip from '@mui/material/Chip';
 import React, { Component }  from 'react';
+import IconButton from '@mui/material/IconButton';
+
+
+//icons
 import MailIcon from '@mui/icons-material/Mail';
 import HubIcon from '@mui/icons-material/Hub';
 import FeedbackIcon from '@mui/icons-material/Feedback';
+import PhotoCamera from '@mui/icons-material/PhotoCamera';
+import NoteIcon from '@mui/icons-material/Note';
 
 
+
+//Const Start 
 const StyledBadge = styled(Badge)(({ theme }) => ({
   '& .MuiBadge-badge': {
     backgroundColor: '#44b700',
@@ -74,16 +82,21 @@ DashboardSidebar.propTypes = {
   isOpenSidebar: PropTypes.bool,
   onCloseSidebar: PropTypes.func,
 };
+//Const End
 
 
-//Get User Time
+
+
+//User Variables
 export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
+
   var Pfp = "N"
   var today = new Date()
   var curHr = today.getHours()
- 
   var userName = "Nathan Aruna";
+ 
   
+//Get current time of day type
   if (curHr = 3){
     var timeMessage = "SPOOKY HOUR"
   }
@@ -95,10 +108,13 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
     var timeMessage = "Good evening.";
   }
 
+//setting current time of day type
   var status = timeMessage 
   const { pathname } = useLocation();
   const isDesktop = useResponsive('up', 'lg');
 
+
+//side bar open shit
   useEffect(() => {
     if (isOpenSidebar) {
       onCloseSidebar();
@@ -106,80 +122,98 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
   }, [pathname]);
 
 
+
+
 //Rendering The Side Nav
   const renderContent = (
+
     <Scrollbar 
       sx={{
         height: 1,
         '& .simplebar-content': { height: 1, display: 'flex', flexDirection: 'column' },
-      }}
-    >
-      <Box sx={{ px: 2.5, py: 0, display: 'inline-flex' }}>
-      </Box>
-    
-    <div class="dayStatusBox">
+      }}>
+
+      <Box sx={{ px: 2.5, py: 0, display: 'inline-flex' }}></Box>
+      
+
+      <div class="profileCard">
       <card variant="outlined">
             <Box sx={{ width: '100%', }}>
             <Stack spacing={0}>
             <Item>
             <Stack direction="row" spacing={2}>
 
-    <div class="dayStatusChip">
-    <Chip avatar={<Avatar>N</Avatar>} label="Nathan Aruna The Great" />
-    </div>
-      </Stack>
-      </Item> 
-      </Stack>
-      </Box>   
+      
+       <Chip avatar={<Avatar>N</Avatar>} label="Nathan Aruna The Great" />
+         </Stack>
+          </Item> 
+         </Stack>
+        </Box>   
       </card>
       </div>
 
-
-      <div class="dayStatusBox">
+      <div class="profileCard">
       <card variant="outlined">
             <Box sx={{ width: '100%', }}>
             <Stack spacing={0}>
             <Item>
             <Stack direction="row" spacing={2}>
 
-    <div class="dayStatusChip">
-      <div class="padding">
-    <Badge badgeContent={4} color="primary">
-      <MailIcon color="action" />
-    </Badge>
-    </div>
-    <div class="padding">
-    <Badge badgeContent={4} color="primary">
-      <HubIcon color="action" />
-    </Badge>
-    </div>
-
-    <div class="padding">
-    <Badge badgeContent={4} color="primary">
-      <FeedbackIcon color="action" />
-    </Badge>
-    </div>
-    </div>
-      </Stack>
-      </Item> 
-      </Stack>
-      </Box>   
+            
+            <Chip size="small" label="Online" color="success" variant="outlined" />  
+            <div className='profileStatus'>
+            <Badge badgeContent={0} color="primary">
+           <MailIcon color="action" />
+           </Badge>   
+           </div>  
+           <div className='profileStatus'>
+            
+            <Badge badgeContent={0} color="primary">
+           <HubIcon color="action" />
+           
+           </Badge>   
+           </div>
+           <div className='profileStatus'>
+            <Badge badgeContent={4} color="primary">
+           <NoteIcon color="action" />
+           </Badge>   
+           </div>  
+            </Stack>
+          </Item> 
+         </Stack>
+        </Box>   
       </card>
       </div>
-    
-    
+     
       
     <Divider variant="middle"/>
-      <NavSection navConfig={navConfig} />
+      <NavSection navConfig={navConfig}/>
+      
        <Divider variant="middle" />
         <Box sx={{ flexGrow: 1 }} />
         <Box sx={{ px: 0, pb: 0, mt: 0}}>
-         <Stack alignItems="center" spacing={20} sx={{ pt: 50, borderRadius: 2, position: 'relative' }}>
+
+        <Stack alignItems="center" spacing={20} sx={{ pt: 50, borderRadius: 2, position: 'relative' }}>
+          <div class="dayStatusBox">
+          <card variant="outlined">
+            <Box sx={{ width: '100%', }}>
+            <Stack spacing={0}>
+            <Item>
+        <Stack direction="row" spacing={2}>
+
+      
+      </Stack>
+      </Item> 
+      </Stack>
+      </Box>   
+      </card>
+      </div>
           <Button href="login" target="_blank" variant="contained">
              Log Out 
           </Button>
         </Stack>
       </Box>
+
     </Scrollbar>
   );
 

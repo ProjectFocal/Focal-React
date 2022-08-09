@@ -10,29 +10,27 @@
     
   }
 
-  .dayStatus {
-    padding-top:10px;
-    padding-right: 0px;
-    padding-bottom: 10px;
-    padding-left: 10px;
-    
-  }  
 
-  .dayStatusBox {
+  .profileCard {
     padding-top:10px;
     padding-right: 10px;
     padding-bottom: 10px;
     padding-left: 10px;
     
     
+  } 
+  
+  .profileTabs {
+    padding-top:15px;
+    padding-bottom: 15px;
+    
   }  
 
 
-  .dayStatusChip {
+  .NotificationCard{
     display: flex;
     justify-content: center;
     align-items: center;
-    
     
     
   }  
@@ -63,7 +61,11 @@
 }
 
 .navbar {
-  float: right
+  float: left;
+}
+
+.noti {
+  float: bottom
 }
 
 .center {
