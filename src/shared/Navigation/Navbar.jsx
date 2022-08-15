@@ -165,7 +165,7 @@ export default function DashboardNavbar({ onOpenSidebar }) {
         </Search>
         </div>
         <div className='navbar'>
-          <Button variant="outlined">Create</Button>
+          <Button href="/uploadcontent" variant="outlined">Create</Button>
           </div>
 
         

@@ -18,6 +18,13 @@ import Tab from '@mui/material/Tab';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import PersonIcon from '@mui/icons-material/Person';
 import BookmarkIcon from '@mui/icons-material/Bookmark';
+import Button from '@mui/material/Button';
+import DeleteIcon from '@mui/icons-material/Delete';
+import SendIcon from '@mui/icons-material/Send';
+import Stack from '@mui/material/Stack';
+
+
+
 
 var status = String("Online")
 
@@ -75,49 +82,13 @@ export default function About() {
   return (
     
     <>
-    <Card sx={{ display: 'flex' }}>
-      <CardMedia
-        component="img"
-        sx={{ width: 151 }}
-        image="https://institutcommotions.com/wp-content/uploads/2018/05/blank-profile-picture-973460_960_720-1.png"
-        alt="ProfilePicture" />
-      <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-        <CardContent sx={{ flex: '1 0 auto' }}>
-          <Typography component="div" variant="h5">
-          <div className='padding'>
-            UserName
-            </div>
-          </Typography>
-          <Typography variant="subtitle1" color="text.secondary" component="div">
-            <div className='padding'>
-            <Chip label={status} color="success" variant="outlined" />
-            </div>
-            <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-            <Tab icon={<PersonIcon />} iconPosition="end"  {...a11yProps(0)} />
-            <Tab icon={<BookmarkIcon />} iconPosition="end" {...a11yProps(1)} />
-            <Tab icon={<FavoriteIcon />} iconPosition="end" {...a11yProps(2)} />
-          </Tabs>
-          </Typography>
-          
-        </CardContent>
-        
-      </Box>
 
-    </Card>
-    
-    <Box sx={{ width: '16.3%' }}>
-        <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-          
-        </Box>
-        <TabPanel value={value} index={0}>
-          
-        </TabPanel>
-        <TabPanel value={value} index={1}>
-        </TabPanel>
-        <TabPanel value={value} index={2}>
-        </TabPanel>
-      </Box>
-      
+     <Stack direction="row" spacing={2}>
+       <Button variant="outlined" startIcon={<DeleteIcon />}>
+        Delete
+      </Button>
+    </Stack>
+   
       </>
       
 

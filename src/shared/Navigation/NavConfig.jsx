@@ -16,15 +16,23 @@ const navConfig = [
     path: '/profile',
     icon: getIcon('eva:person-outline'),
   },
+ 
   {
     title: 'Friends',
     path: '/friends',
     icon: getIcon('akar-icons:people-group'),
   },
+  
   {
-    title: 'FocalPoints',
-    path: '/focalpoints',
-    icon: getIcon('material-symbols:hub-outline'),
+    title: 'Notifications',
+    path: '/notifications',
+    icon: getIcon('ic:baseline-notifications-none'),
+  },
+
+  {
+    title: 'Achievements',
+    path: '/achievements',
+    icon: getIcon('ant-design:trophy-outlined'),
   },
   
   {

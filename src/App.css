@@ -1,3 +1,40 @@
+.cover {
+  padding: 0px 30px;
+  position: relative;
+}
+.left {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.right {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.scroll-images {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+
+
+.child {
+  width: 1000px;
+  height: 1000px;
+  margin: 1px 10px;
+  overflow: hidden;
+}
+
 .roundcorns {
   flex:1; 
 }
@@ -74,6 +111,11 @@
   padding: 10px;
 }
 
+.center2{
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .ProfilePadding {
   padding-top: 30px;
   padding-right: 5px;
@@ -118,5 +160,11 @@
   max-width: 650px;
 }
 
-
+.centered-element {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 

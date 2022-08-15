@@ -46,7 +46,7 @@ const SECONDARY = {
   contrastText: '#FFFFFF',
 };
 
-const INFO = {
+const INFO = { 
   lighter: '#D0F2F',
   light: '#74CAFF',
   main: '#1890FF',

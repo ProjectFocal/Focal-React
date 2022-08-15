@@ -8,11 +8,13 @@ import useResponsive from './useResponsive';
 import Scrollbar from './Scrollbar';
 import NavSection from './NavSection';
 import navConfig from './NavConfig';
+import navConfig2 from './NavConfig2';
 import Badge from '@mui/material/Badge';
 import Divider from '@mui/material/Divider';
 import Chip from '@mui/material/Chip';
 import React, { Component }  from 'react';
 import IconButton from '@mui/material/IconButton';
+import Alert from '@mui/material/Alert';
 
 
 //icons
@@ -124,6 +126,7 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
 
 
 
+
 //Rendering The Side Nav
   const renderContent = (
 
@@ -185,9 +188,14 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
       </card>
       </div>
      
+     
       
     <Divider variant="middle"/>
       <NavSection navConfig={navConfig}/>
+    <Divider variant="middle"/>
+      <NavSection navConfig={navConfig2}/>
+
+    
       
        <Divider variant="middle" />
         <Box sx={{ flexGrow: 1 }} />
@@ -213,6 +221,7 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
           </Button>
         </Stack>
       </Box>
+      
 
     </Scrollbar>
   );
@@ -221,6 +230,7 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
   return (
     <Paper elevation={6}>
     <RootStyle>
+      
       
       {!isDesktop && (
         <Drawer

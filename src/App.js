@@ -1,3 +1,4 @@
+import React, { Component }  from 'react';
 import { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
@@ -10,13 +11,24 @@ import NavStructure from './shared/Navigation/NavStructure.jsx';
 import Settings from './pages/Settings';
 import NotFound from './pages/NotFound';
 import 'bootstrap/dist/css/bootstrap.min.css';
+
+//page imports
 import Login from './pages/Login'
 import SignUp from './pages/SignUp'
 import Profile from './pages/Profile'
 import Friends from'./pages/Friends'
 import FocalPoints from './pages/FocalPoints'
 import SpecialFeature from './pages/SpecialFeature'
-import React, { Component }  from 'react';
+import UploadContent from './pages/UploadContent'
+import Notifications from './pages/Notifications'
+import Explore from './pages/Explore'
+import Tech from './pages/Tech'
+import Gaming from './pages/Gaming'
+import Achievements from './pages/Achievements';
+
+
+
+var UserLoggedIn = true;
 
 
 
@@ -25,7 +37,8 @@ function App(props) {
   return (
     <>
       <BrowserRouter>
-        <Router />
+        <Router>
+        </Router>
       </BrowserRouter>
       <Footer />
     </>
@@ -44,6 +57,14 @@ function Router() {
         { path: 'focalpoints', element: <FocalPoints /> },
         { path: 'about', element: <About /> },
         { path: 'settings', element: <Settings /> },
+        { path: 'uploadcontent', element: <UploadContent /> },
+        { path: 'notifications', element: <Notifications /> },
+        { path: 'explore', element: <Explore /> },
+        { path: 'tech', element: <Tech /> },
+        { path: 'gaming', element: <Gaming /> },
+        { path: 'achievements', element: <Achievements /> },
+
+
       ],
     },  
     {

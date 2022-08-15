@@ -9,7 +9,7 @@ import TreeItem from '@mui/lab/TreeItem';
 import { Divider } from '@mui/material';
 
 
-export default function ControlledTreeView() {
+export default function SpecialFeature() {
     const [expanded, setExpanded] = React.useState([]);
     const [selected, setSelected] = React.useState([]);
   
