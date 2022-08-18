@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import React, { Component }  from 'react';
+import React from 'react';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
@@ -76,8 +76,9 @@ export default function About() {
     </div>
     
     <div class="aboutCards2">
-    
+    <div className='HowItStarted'>
     <h2>How It Started:</h2>
+    </div>
       <Card sx={{ maxWidth: 345 }}>
       <CardMedia
         component="img"

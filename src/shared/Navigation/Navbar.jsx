@@ -147,7 +147,7 @@ export default function DashboardNavbar({ onOpenSidebar }) {
           
           
           <IconButton onClick={onOpenSidebar} sx={{ mr: 1, color: 'text.primary', display: { lg: 'none' } }}>
-          <Iconify icon="eva:menu-2-fill" />
+          <Iconify icon="eva:menu-fill" />
           </IconButton>
           
           
@@ -164,10 +164,7 @@ export default function DashboardNavbar({ onOpenSidebar }) {
             
         </Search>
         </div>
-        <div className='navbar'>
-          <Button href="/uploadcontent" variant="outlined">Create</Button>
-          </div>
-
+       
         
         <Modal
           open={open}

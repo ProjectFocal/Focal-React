@@ -1,128 +1,57 @@
-import { useState } from 'react';
-import Page from '../components/Page';
-import React, { Component }  from 'react';
-import { useTheme } from '@mui/material/styles';
-import Box from '@mui/material/Box';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import SkipPreviousIcon from '@mui/icons-material/SkipPrevious';
-import PlayArrowIcon from '@mui/icons-material/PlayArrow';
-import SkipNextIcon from '@mui/icons-material/SkipNext';
-import { Chip } from '@mui/material';
-import PropTypes from 'prop-types';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import PersonIcon from '@mui/icons-material/Person';
-import BookmarkIcon from '@mui/icons-material/Bookmark';
+import * as React from 'react';
+import AspectRatio from '@mui/joy/AspectRatio';
+import Box from '@mui/joy/Box';
+import Card from '@mui/joy/Card';
+import Typography from '@mui/joy/Typography';
+import { Paper } from '@mui/material';
+import Button from '@mui/material/Button';
+import Divider from '@mui/material/Divider';
 
-var status = String("Online")
 
-function TabPanel(props) {
-  const { children, value, index, ...other } = props;
-
+export default function InteractiveCard() {
+ 
   return (
-    <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`simple-tabpanel-${index}`}
-      aria-labelledby={`simple-tab-${index}`}
-      {...other}
+    <div className='padding'>
+    <Paper elevation={6} sx={{
+      minWidth: 400,
+      maxWidth: 400,
+
+    }} >
+    <Card
+      row
+      sx={{
+        minWidth: '320px',
+        gap: 2,
+        '&:hover': { boxShadow: 'md', borderColor: 'neutral.outlinedHoverBorder' },
+      }}
     >
-      {value === index && (
-        <Box sx={{ p: 3 }}>
-          <Typography>{children}</Typography>
-        </Box>
-      )}
-    </div>
-  );
-}
+      <AspectRatio ratio="1" sx={{ width: 90 }}>
+        <img
+          src="https://www.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png"
+          alt=""
+        />
+      </AspectRatio>
+      <Box>
+        <Box sx={{ ml: 0.5 }}>
+          <Typography level="h2" fontSize="lg" id="card-description" mb={0.5}>
+            USERNAME HERE
 
-TabPanel.propTypes = {
-  children: PropTypes.node,
-  index: PropTypes.number.isRequired,
-  value: PropTypes.number.isRequired,
-};
-
-function a11yProps(index) {
-  return {
-    id: `simple-tab-${index}`,
-    'aria-controls': `simple-tabpanel-${index}`,
-  };
-}
-
-
-
-export default function About() {
-  const [openFilter, setOpenFilter] = useState(false);
-  const [value, setValue] = React.useState(0);
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
-
-  const handleOpenFilter = () => {
-    setOpenFilter(true);
-  };
-
-
-  const theme = useTheme(); 
-  
-
-  return (
-    
-    <>
-    <Card sx={{ display: 'flex' }}>
-      <CardMedia
-        component="img"
-        sx={{ width: 151 }}
-        image="https://institutcommotions.com/wp-content/uploads/2018/05/blank-profile-picture-973460_960_720-1.png"
-        alt="ProfilePicture" />
-      <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-        <CardContent sx={{ flex: '1 0 auto' }}>
-          <Typography component="div" variant="h5">
-          <div className='padding'>
-            UserName
-            </div>
           </Typography>
-          <Typography variant="subtitle1" color="text.secondary" component="div">
-            <div className='padding'>
-            <Chip label={status} color="success" variant="outlined" />
-            </div>
-            <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-            <Tab icon={<PersonIcon />} iconPosition="end"  {...a11yProps(0)} />
-            <Tab icon={<BookmarkIcon />} iconPosition="end" {...a11yProps(1)} />
-            <Tab icon={<FavoriteIcon />} iconPosition="end" {...a11yProps(2)} />
-          </Tabs>
+          <Typography fontSize="sm" aria-describedby="card-description" mb={1}>
+            
+              The about me part of the profile goes here.
           </Typography>
+
           
-        </CardContent>
-        
-      </Box>
+          <Button href="/settings" size="small" variant="outlined">Edit Profile</Button> <Button href="/uploadcontent" size="small" variant="outlined">Create</Button> 
+         
 
+
+    
+        </Box>
+      </Box>
     </Card>
-    
-    <Box sx={{ width: '16.3%' }}>
-        <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-          
-        </Box>
-        <TabPanel value={value} index={0}>
-          
-        </TabPanel>
-        <TabPanel value={value} index={1}>
-        </TabPanel>
-        <TabPanel value={value} index={2}>
-        </TabPanel>
-      </Box>
-      
-      </>
-      
-
-
-      
-    
+    </Paper>
+    </div>
   );
 }

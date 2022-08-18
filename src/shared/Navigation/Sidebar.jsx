@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { useEffect } from 'react';
 import { Link as RouterLink, useLocation } from 'react-router-dom';
 import { styled } from '@mui/material/styles';
-import { Box, Link, Button, Drawer, Typography, Avatar, Stack, Paper, ButtonBase, ButtonGroup } from '@mui/material';
+import { Box, Button, Drawer, Avatar, Stack, Paper, } from '@mui/material';
 import useResponsive from './useResponsive';
 import Scrollbar from './Scrollbar';
 import NavSection from './NavSection';
@@ -12,16 +12,12 @@ import navConfig2 from './NavConfig2';
 import Badge from '@mui/material/Badge';
 import Divider from '@mui/material/Divider';
 import Chip from '@mui/material/Chip';
-import React, { Component }  from 'react';
-import IconButton from '@mui/material/IconButton';
-import Alert from '@mui/material/Alert';
+import React from 'react';
 
 
 //icons
 import MailIcon from '@mui/icons-material/Mail';
 import HubIcon from '@mui/icons-material/Hub';
-import FeedbackIcon from '@mui/icons-material/Feedback';
-import PhotoCamera from '@mui/icons-material/PhotoCamera';
 import NoteIcon from '@mui/icons-material/Note';
 
 
@@ -139,7 +135,7 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
       <Box sx={{ px: 2.5, py: 0, display: 'inline-flex' }}></Box>
       
 
-      <div class="profileCard">
+      <div className="profileCard">
       <card variant="outlined">
             <Box sx={{ width: '100%', }}>
             <Stack spacing={0}>
@@ -155,7 +151,7 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
       </card>
       </div>
 
-      <div class="profileCard">
+      <div className="profileCard">
       <card variant="outlined">
             <Box sx={{ width: '100%', }}>
             <Stack spacing={0}>
@@ -202,7 +198,7 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
         <Box sx={{ px: 0, pb: 0, mt: 0}}>
 
         <Stack alignItems="center" spacing={20} sx={{ pt: 50, borderRadius: 2, position: 'relative' }}>
-          <div class="dayStatusBox">
+          <div className="dayStatusBox">
           <card variant="outlined">
             <Box sx={{ width: '100%', }}>
             <Stack spacing={0}>

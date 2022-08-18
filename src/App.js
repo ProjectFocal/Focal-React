@@ -1,12 +1,10 @@
-import React, { Component }  from 'react';
-import { useState } from 'react';
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
 import Home from './pages/Home.jsx';
 import Footer from './shared/Footer.jsx';
 import About from './pages/About.jsx';
 import { Navigate, useRoutes } from 'react-router-dom';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import NavStructure from './shared/Navigation/NavStructure.jsx';
 import Settings from './pages/Settings';
 import NotFound from './pages/NotFound';
@@ -28,7 +26,6 @@ import Achievements from './pages/Achievements';
 
 
 
-var UserLoggedIn = true;
 
 
 
