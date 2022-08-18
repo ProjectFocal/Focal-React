@@ -1,52 +1,141 @@
 import * as React from 'react';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
-
-function createData(name, NewPost, Messages) {
-  return { name, NewPost, Messages};
-}
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import Divider from '@mui/material/Divider';
+import ListItemText from '@mui/material/ListItemText';
+import ListItemAvatar from '@mui/material/ListItemAvatar';
+import Avatar from '@mui/material/Avatar';
+import Typography from '@mui/material/Typography';
+import { Chip } from '@mui/material';
 
 
-
-const rows = [
-  createData('Nathan Aruna Junior', 2, 5),
-  createData('Nathan Aruna Senior ', 2, 5),
-  createData('Nathan Aruna',2, 5),
-  createData('Nathan Aruna', 2, 5),
-  createData('Nathan Aruna', 2, 5),
-];
-
-export default function Friends() {
+//Demo All of this content will be handled in the Friends Handler src/components/UsersFriends
+export default function AlignItemsList() {
   return (
-    <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }} aria-label="simple table">
-        <TableHead>
-          <TableRow>
-            <TableCell>*UserName* Friends's</TableCell>
-            <TableCell align="right">New Post</TableCell>
-            <TableCell align="right">New Messages</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {rows.map((row) => (
-            <TableRow
-              key={row.name}
-              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+    <>
+    <div className='padding'>
+    <h4>Friends:</h4>
+    </div>
+    <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+      <ListItem alignItems="flex-start">
+        <ListItemAvatar>
+          <Avatar alt="Remy Sharp" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9Z9vjM-_Ww_rUHKOYFQ3brhBsKWniGSN7jembYtImHkPzHReyZ4zNBlPF550WjI8a_eE&usqp=CAU" />
+        </ListItemAvatar>
+        <ListItemText
+          primary="Nathan Aruna The Great"
+          secondary={<React.Fragment>
+            <Typography
+              sx={{ display: 'inline' }}
+              component="span"
+              variant="body2"
+              color="text.primary"
             >
-              <TableCell component="th" scope="row">
-                {row.name}
-              </TableCell>
-              <TableCell align="right">{row.Messages}</TableCell>
-              <TableCell align="right">{row.NewPost}</TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+              <Chip size="small" label="Online" color="success" variant="outlined" />
+            </Typography>
+            {" — The last message communicated with this user will go here."}
+          </React.Fragment>} />
+      </ListItem>
+      <Divider variant="inset" component="li" />
+      <ListItem alignItems="flex-start">
+        <ListItemAvatar>
+          <Avatar alt="Travis Howard" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9Z9vjM-_Ww_rUHKOYFQ3brhBsKWniGSN7jembYtImHkPzHReyZ4zNBlPF550WjI8a_eE&usqp=CAU" />
+        </ListItemAvatar>
+        <ListItemText
+          primary="Nathan Aruna The Great"
+          secondary={<React.Fragment>
+            <Typography
+              sx={{ display: 'inline' }}
+              component="span"
+              variant="body2"
+              color="text.primary"
+            >
+              <Chip size="small" label="Away" color="warning" variant="outlined" />
+            </Typography>
+            {" — The last message communicated with this user will go here."}
+          </React.Fragment>} />
+      </ListItem>
+      <Divider variant="inset" component="li" />
+      <ListItem alignItems="flex-start">
+        <ListItemAvatar>
+          <Avatar alt="Cindy Baker" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9Z9vjM-_Ww_rUHKOYFQ3brhBsKWniGSN7jembYtImHkPzHReyZ4zNBlPF550WjI8a_eE&usqp=CAU" />
+        </ListItemAvatar>
+        <ListItemText
+          primary="Nathan Aruna The Great"
+          secondary={<React.Fragment>
+            <Typography
+              sx={{ display: 'inline' }}
+              component="span"
+              variant="body2"
+              color="text.primary"
+            >
+              <Chip size="small" label="Offline" variant="outlined" />
+            </Typography>
+            {' — The last message communicated with this user will go here.'}
+          </React.Fragment>} />
+      </ListItem>
+    </List>
+    <div className='padding'>
+    <h4>Suggested users:</h4>
+    </div>
+    <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+      <ListItem alignItems="flex-start">
+        <ListItemAvatar>
+          <Avatar alt="Remy Sharp" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9Z9vjM-_Ww_rUHKOYFQ3brhBsKWniGSN7jembYtImHkPzHReyZ4zNBlPF550WjI8a_eE&usqp=CAU" />
+        </ListItemAvatar>
+        <ListItemText
+          primary="Nathan Aruna The Great"
+          secondary={<React.Fragment>
+            <Typography
+              sx={{ display: 'inline' }}
+              component="span"
+              variant="body2"
+              color="text.primary"
+            >
+              <Chip size="small" label="Online" color="success" variant="outlined" />
+            </Typography>
+            {" — The last message communicated with this user will go here."}
+          </React.Fragment>} />
+      </ListItem>
+      <Divider variant="inset" component="li" />
+      <ListItem alignItems="flex-start">
+        <ListItemAvatar>
+          <Avatar alt="Travis Howard" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9Z9vjM-_Ww_rUHKOYFQ3brhBsKWniGSN7jembYtImHkPzHReyZ4zNBlPF550WjI8a_eE&usqp=CAU" />
+        </ListItemAvatar>
+        <ListItemText
+          primary="Nathan Aruna The Great"
+          secondary={<React.Fragment>
+            <Typography
+              sx={{ display: 'inline' }}
+              component="span"
+              variant="body2"
+              color="text.primary"
+            >
+              <Chip size="small" label="Away" color="warning" variant="outlined" />
+            </Typography>
+            {" — The last message communicated with this user will go here."}
+          </React.Fragment>} />
+      </ListItem>
+      <Divider variant="inset" component="li" />
+      <ListItem alignItems="flex-start">
+        <ListItemAvatar>
+          <Avatar alt="Cindy Baker" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9Z9vjM-_Ww_rUHKOYFQ3brhBsKWniGSN7jembYtImHkPzHReyZ4zNBlPF550WjI8a_eE&usqp=CAU" />
+        </ListItemAvatar>
+        <ListItemText
+          primary="Nathan Aruna The Great"
+          secondary={<React.Fragment>
+            <Typography
+              sx={{ display: 'inline' }}
+              component="span"
+              variant="body2"
+              color="text.primary"
+            >
+              <Chip size="small" label="Offline" variant="outlined" />
+            </Typography>
+            {' — The last message communicated with this user will go here.'}
+          </React.Fragment>} />
+      </ListItem>
+    </List>
+    
+    </>
   );
 }

@@ -17,7 +17,6 @@ import Face from '@mui/icons-material/Face';
 import BookmarkBorderRoundedIcon from '@mui/icons-material/BookmarkBorderRounded';
 import { Paper } from '@mui/material';
 
-//Demo All of this content will be handled in the Post Handler src/components/UsersContent
 
 export default function InstagramPost() {
   return (
