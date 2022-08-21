@@ -28,6 +28,11 @@ const navConfig = [
     path: '/notifications',
     icon: getIcon('ic:baseline-notifications-none'),
   },
+  {
+    title: 'Saved',
+    path: '',
+    icon: getIcon('eva:bookmark-outline'),
+  },
 
   {
     title: 'Achievements',

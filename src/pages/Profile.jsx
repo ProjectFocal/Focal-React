@@ -11,6 +11,7 @@ import Divider from '@mui/material/Divider';
 export default function InteractiveCard() {
  
   return (
+    <center>
     <div className='padding'>
     <Paper elevation={6} sx={{
       minWidth: 400,
@@ -53,5 +54,7 @@ export default function InteractiveCard() {
     </Card>
     </Paper>
     </div>
+    
+    </center>
   );
 }

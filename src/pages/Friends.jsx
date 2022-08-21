@@ -7,14 +7,15 @@ import ListItemAvatar from '@mui/material/ListItemAvatar';
 import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
 import { Chip } from '@mui/material';
-
+import PeopleOutlineIcon from '@mui/icons-material/PeopleOutline';
 
 //Demo All of this content will be handled in the Friends Handler src/components/UsersFriends
 export default function AlignItemsList() {
   return (
     <>
     <div className='padding'>
-    <h4>Friends:</h4>
+    <Chip label="‎ ‎ Friends: ‎ ‎ " variant="outlined" />
+    
     </div>
     <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
       <ListItem alignItems="flex-start">
@@ -75,7 +76,7 @@ export default function AlignItemsList() {
       </ListItem>
     </List>
     <div className='padding'>
-    <h4>Suggested users:</h4>
+    <Chip label="‎ ‎ Suggested Users: ‎ ‎ " variant="outlined" />
     </div>
     <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
       <ListItem alignItems="flex-start">

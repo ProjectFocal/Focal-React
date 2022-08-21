@@ -16,7 +16,11 @@ import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import { styled } from '@mui/material/styles';
 import Switch from '@mui/material/Switch';
-
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
 
 
 
@@ -101,6 +105,28 @@ export default function Settings() {
     setValue(newValue);
   };
 
+  const [open, setOpen] = React.useState(false);
+  const [scroll, setScroll] = React.useState('paper');
+
+  const handleClickOpen = (scrollType) => () => {
+    setOpen(true);
+    setScroll(scrollType);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const descriptionElementRef = React.useRef(null);
+  React.useEffect(() => {
+    if (open) {
+      const { current: descriptionElement } = descriptionElementRef;
+      if (descriptionElement !== null) {
+        descriptionElement.focus();
+      }
+    }
+  }, [open]);
+
 
  
 
@@ -112,7 +138,7 @@ export default function Settings() {
     
     <Box sx={{ width: '100%' }}>
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-        <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
+        <Tabs value={value}  onChange={handleChange} aria-label="basic tabs example">
           <Tab label="Account" {...a11yProps(0)} />
           <Tab label="Profile" {...a11yProps(1)} />
           <Tab label="Notifications" {...a11yProps(2)} />
@@ -123,21 +149,17 @@ export default function Settings() {
       </Box>
 
       
-
-      <TabPanel value={value} index={0}>
-<card variant="outlined">
-      <Box sx={{ width: '20%' }}>
-      <Stack spacing={3}>
-        <Item> <Chip label="ExampleEmail@Gmail.com"/></Item>
-          
-      </Stack>
-    </Box>
-     
-
       
-          </card>
+      <TabPanel value={value} index={0}>
+      <card variant="outlined">
+        <Box sx={{ width: '20%' }}>
+          <Stack spacing={3}>
+            <Item> <Chip label="ExampleEmail@Gmail.com"/></Item>
+          </Stack>
+        </Box>
+      </card>
       </TabPanel>
-
+     
 
 
       <TabPanel value={value} index={1}>
@@ -251,29 +273,39 @@ export default function Settings() {
       </TabPanel>
 
       <TabPanel value={value} index={5}>
-      Prvacy
-        <div class="spacer"></div>
-        <div class="spacer"></div>
-        <div class="spacer"></div>
-        <div class="spacer"></div>
-        <div class="spacer"></div>
-        <div class="spacer"></div>
-        <div class="spacer"></div>
-        <div class="spacer"></div>
-        <div class="spacer"></div>
-        <div class="spacer"></div>
-        <div class="spacer"></div>
-        <div class="spacer"></div>
-        <div class="spacer"></div>
-        <div class="spacer"></div>
-        <div class="spacer"></div>
-        <div class="spacer"></div>
-        <div class="spacer"></div>
-        <div class="spacer"></div>
       
+      <div>
+      <Button onClick={handleClickOpen('paper')}>Terms of Service</Button>
+
+      <Dialog
+        open={open}
+        onClose={handleClose}
+        scroll={scroll}
+        aria-labelledby="scroll-dialog-title"
+        aria-describedby="scroll-dialog-description"
+      >
+        <DialogTitle id="scroll-dialog-title">Terms of Service</DialogTitle>
+        <DialogContent dividers={scroll === 'paper'}>
+          <DialogContentText
+            id="scroll-dialog-description"
+            ref={descriptionElementRef}
+            tabIndex={-1}
+          >
+            {[...new Array(10)]
+              .map(
+                () => `Terms of service (also known as terms of use and terms and conditions, commonly abbreviated as TOS or ToS, ToU or T&C) are the legal agreements between a service provider and a person who wants to use that service. The person must agree to abide by the terms of service in order to use the offered service.`,
+              )
+              .join('\n')}
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          
+          <Button onClick={handleClose}>Accept</Button>
+        </DialogActions>
+      </Dialog>
+    </div>
+
       </TabPanel>
-      
-      
     </Box>
     
   );

@@ -24,7 +24,9 @@ const message = `Achievements will be made up later and will be used to reward u
 export default function Achievements(props) {
     
   return (
-    <><Box sx={{ flexGrow: 1, overflow: 'hidden', px: 3 }}>
+    <>
+    <center>
+    <Box sx={{ flexGrow: 1, overflow: 'hidden', px: 3 }}>
           <StyledPaper
               sx={{
                   my: 1,
@@ -102,7 +104,9 @@ export default function Achievements(props) {
                       </Grid>
                   </Grid>
               </StyledPaper>
-          </Box></>
+          </Box>
+          </center>
+          </>
 
         
   );

@@ -65,11 +65,14 @@ export default function BasicTabs() {
     
     <Box sx={{ width: '100%' }}>
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-        <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
+      
+        <Tabs value={value} centered onChange={handleChange} aria-label="basic tabs example">
           <Tab icon={<MailIcon />} {...a11yProps(0)} />
           <Tab icon={<HubIcon />} {...a11yProps(1)} />
           <Tab icon={<NoteIcon />} {...a11yProps(2)} />
+          
         </Tabs>
+        
       </Box>
       <TabPanel value={value} index={0}>
 
@@ -84,5 +87,6 @@ export default function BasicTabs() {
         Item Three
       </TabPanel>
     </Box>
+    
   );
 }
