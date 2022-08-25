@@ -23,10 +23,8 @@ import Explore from './pages/Explore'
 import Tech from './pages/Tech'
 import Gaming from './pages/Gaming'
 import Achievements from './pages/Achievements';
-
-
-
-
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import Saved from './pages/Saved';
 
 
 function App(props) {
@@ -60,6 +58,8 @@ function Router() {
         { path: 'tech', element: <Tech /> },
         { path: 'gaming', element: <Gaming /> },
         { path: 'achievements', element: <Achievements /> },
+        { path: 'privacypolicy', element: <PrivacyPolicy /> },
+        { path: 'saved', element: <Saved /> },
 
 
       ],

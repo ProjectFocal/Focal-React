@@ -6,13 +6,15 @@ import Typography from '@mui/joy/Typography';
 import { Paper } from '@mui/material';
 import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
+import BookmarkIcon from '@mui/icons-material/Bookmark';
+import IconButton from '@mui/material/IconButton';
 
 
 export default function InteractiveCard() {
  
   return (
     <center>
-    <div className='padding'>
+   
     <Paper elevation={6} sx={{
       minWidth: 400,
       maxWidth: 400,
@@ -44,8 +46,10 @@ export default function InteractiveCard() {
           </Typography>
 
           
-          <Button href="/settings" size="small" variant="outlined">Edit Profile</Button> <Button href="/uploadcontent" size="small" variant="outlined">Create</Button> 
-         
+          <Button href="/settings" size="small" variant="contained">Edit Profile</Button> <Button href="/uploadcontent" size="small" variant="contained">Create</Button> 
+          <IconButton href="/saved"color="primary" aria-label="delete">
+           <BookmarkIcon />
+         </IconButton>
 
 
     
@@ -53,7 +57,7 @@ export default function InteractiveCard() {
       </Box>
     </Card>
     </Paper>
-    </div>
+    
     
     </center>
   );

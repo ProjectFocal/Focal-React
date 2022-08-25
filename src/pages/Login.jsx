@@ -39,17 +39,21 @@ export default function SignInSide() {
   };
 
   return (
+    
     <ThemeProvider theme={theme}>
       
       <Grid container component="main" sx={{ height: '100vh' }}>
         
         <CssBaseline />
+  
         <Grid
           item
           xs={false}
           sm={4}
           md={7}
           sx={{
+            backgroundImage: 'url(https://live.staticflickr.com/478/19341330479_e131ab4165_b.jpg)',
+            
             backgroundRepeat: 'no-repeat',
             backgroundColor: (t) =>
               t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
@@ -79,6 +83,7 @@ export default function SignInSide() {
           sx={{ width: 60, height: 60 }}
 />
 </div>
+
             <Typography component="h1" variant="h5">
               Sign In To Focal
             </Typography>
@@ -130,7 +135,9 @@ export default function SignInSide() {
               <Copyright sx={{ mt: 5 }} />
             </Box>
           </Box>
+          
         </Grid>
+        
       </Grid>
     </ThemeProvider>
   );

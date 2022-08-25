@@ -40,7 +40,8 @@ import SaveIcon from '@mui/icons-material/Save';
 import PrintIcon from '@mui/icons-material/Print';
 import ShareIcon from '@mui/icons-material/Share';
 import SpeedDialIcon from '@mui/material/SpeedDialIcon';
-
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import AddCircleIcon from '@mui/icons-material/AddCircle';
 
 //Const Start
 const DRAWER_WIDTH = 200;
@@ -160,11 +161,15 @@ export default function DashboardNavbar({ onOpenSidebar }) {
             </SearchIconWrapper>
             <StyledInputBase
             placeholder="Search…"
-            inputProps={{ 'aria-label': 'search' }} />
-            
+            inputProps={{ 'aria-label': 'search' }} />   
         </Search>
         </div>
-       
+
+        <div className='navbar'>
+        <Button href="/UploadContent" variant="contained" endIcon={<AddCircleIcon/>}>
+           Upload
+        </Button>
+        </div>
         
         <Modal
           open={open}
@@ -193,10 +198,9 @@ export default function DashboardNavbar({ onOpenSidebar }) {
             </Typography>
           </Box>
         </Modal>
-
-        
-
+      
       </ToolbarStyle>
+      
     </RootStyle>
   );
 }
