@@ -23,6 +23,7 @@ import DialogTitle from '@mui/material/DialogTitle';
 import Button2 from '@mui/material/Button';
 import Chip2 from '@mui/material/Chip';
 import IconButton2 from '@mui/material/IconButton';
+import { userImage, activity, userEmail, userName, aboutMe } from '../components/User/UserHandler';
 
 
 // Icons import
@@ -86,12 +87,12 @@ export default function UploadContent() {
           >
             <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
               <Avatar
-                src="https://www.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png"
-                srcSet="https://www.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png"
+                src={userImage}
+                srcSet={`${userImage} 2x`}
                 sx={{ borderRadius: 'sm' }} />
               <Box sx={{ ml: 2 }}>
                 <Typography level="body2" textColor="text.primary" mb={0.5}>
-                  USERNAME
+                  {userName}
                 </Typography>
                 <Typography level="body3" textColor="text.tertiary">
                   

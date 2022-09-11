@@ -10,7 +10,7 @@ import { Chip } from '@mui/material';
 import { notiType, profilePicture, timeAgo, title } from '../components/UsersNotifications/UsersNotificationshandler';
 
 
-//Demo All of this content will be handled in the Friends Handler src/components/UsersFriends
+//Demo All of this content will be handled in the Friends Handler 
 export default function AlignItemsList() {
   return (
     <>

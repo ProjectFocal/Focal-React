@@ -8,6 +8,7 @@ import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
 import BookmarkIcon from '@mui/icons-material/Bookmark';
 import IconButton from '@mui/material/IconButton';
+import { userImage, activity, userEmail, userName, aboutMe } from '../components/User/UserHandler';
 
 
 export default function InteractiveCard() {
@@ -30,19 +31,20 @@ export default function InteractiveCard() {
     >
       <AspectRatio ratio="1" sx={{ width: 90 }}>
         <img
-          src="https://www.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png"
+          src={userImage}
           alt=""
         />
       </AspectRatio>
       <Box>
         <Box sx={{ ml: 0.5 }}>
           <Typography level="h2" fontSize="lg" id="card-description" mb={0.5}>
-            USERNAME HERE
+
+            {userName}
 
           </Typography>
           <Typography fontSize="sm" aria-describedby="card-description" mb={1}>
             
-              The about me part of the profile goes here.
+            {aboutMe}
           </Typography>
 
           

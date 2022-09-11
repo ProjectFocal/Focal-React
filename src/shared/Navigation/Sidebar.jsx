@@ -13,6 +13,7 @@ import Badge from '@mui/material/Badge';
 import Divider from '@mui/material/Divider';
 import Chip from '@mui/material/Chip';
 import React from 'react';
+import { userImage, activity, userEmail, userName, aboutMe } from '../../components/User/UserHandler';
 
 
 //icons
@@ -90,11 +91,10 @@ DashboardSidebar.propTypes = {
 //User Variables
 export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
 
-  var Pfp = "N"
+ 
   var today = new Date()
   var curHr = today.getHours()
-  var userName = "Nathan Aruna";
- 
+  
   
 //Get current time of day type
   if (curHr = 3){
@@ -138,19 +138,15 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
       
 
       <div className="profileCard">
-      <card variant="outlined">
-            <Box sx={{ width: '100%', }}>
-            <Stack spacing={0}>
-            <Item>
-            <Stack direction="row" spacing={2}>
-
       
-       <Chip avatar={<Avatar>N</Avatar>} label="Nathan Aruna The Great" />
-         </Stack>
-          </Item> 
-         </Stack>
-        </Box>   
-      </card>
+           
+      <Stack spacing={0}>
+            
+       <Chip variant="outlined" avatar={<Avatar alt="Remy Sharp" src={userImage} />} label={userName} />
+         
+      </Stack>
+         
+     
       </div>
 
       <div className="profileCard">
@@ -214,9 +210,7 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
       </Box>   
       </card>
       </div>
-          <Button href="login" target="_blank" variant="contained">
-             Log Out 
-          </Button>
+          
         </Stack>
       </Box>
       
