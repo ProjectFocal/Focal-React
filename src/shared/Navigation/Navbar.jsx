@@ -193,7 +193,7 @@ export default function DashboardNavbar({ onOpenSidebar }) {
       <RootStyle>
         
         <ToolbarStyle className="navbar active">
-        <WallPaper />
+        
           
           <IconButton onClick={onOpenSidebar} sx={{ mr: 1, color: 'text.primary', display: { lg: 'none' } }}>
           <Iconify icon="eva:menu-fill" />

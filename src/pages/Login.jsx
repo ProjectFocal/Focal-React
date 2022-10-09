@@ -1,144 +1,158 @@
-import * as React from 'react';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import CssBaseline from '@mui/material/CssBaseline';
+import React, { Component } from "react";
+import Form from "react-validation/build/form";
+import CheckButton from "react-validation/build/button";
 import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
-import Link from '@mui/material/Link';
-import Paper from '@mui/material/Paper';
-import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
-import Typography from '@mui/material/Typography';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import "./FocalPoint.css"
+import AuthService from "../services/auth.service";
+import { ConnectedRouter, routerReducer, routerMiddleware } from 'react-router-redux';
 
-function Copyright(props) {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
-      {'Copyright © '}
-      <Link color="inherit" href="">
-        Focal 
-      </Link>{''}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
 
-const theme = createTheme();
 
-export default function SignInSide() {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
-  };
+const required = value => {
+  if (!value) {
+    return (
+      <div className="alert alert-danger" role="alert">
+        This field is required!
+      </div>
+    );
+  }
+};
 
-  return (
-    
-    <ThemeProvider theme={theme}>
-      
-      <Grid container component="main" sx={{ height: '100vh' }}>
-        
-        <CssBaseline />
+
+export default class Login extends Component {
   
-        <Grid
-          item
-          xs={false}
-          sm={4}
-          md={7}
-          sx={{
-            backgroundImage: 'url(https://live.staticflickr.com/478/19341330479_e131ab4165_b.jpg)',
-            
-            backgroundRepeat: 'no-repeat',
-            backgroundColor: (t) =>
-              t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
-        />
-        
+  constructor(props) {
+    super(props);
+    this.handleLogin = this.handleLogin.bind(this);
+    this.onChangeUsername = this.onChangeUsername.bind(this);
+    this.onChangePassword = this.onChangePassword.bind(this);
 
-        
-        <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
-          <Box
-            sx={{
-              my: 8,
-              mx: 4,
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
+    this.state = {
+      username: "",
+      password: "",
+      loading: false,
+      message: ""
+    };
+  }
+
+  onChangeUsername(e) {
+    this.setState({
+      username: e.target.value
+    });
+  }
+
+  onChangePassword(e) {
+    this.setState({
+      password: e.target.value
+    });
+  }
+
+  handleLogin(e) {
+    
+    console.log(this.state);
+    e.preventDefault();
+
+    this.setState({
+      message: "",
+      loading: true
+    });
+
+    this.form.validateAll();
+
+    if (this.checkBtn.context._errors.length === 0) {
+      AuthService.login(this.state.username, this.state.password).then(
+        () => {
+          this.props.history.push("/profile");
+          window.location.reload();
+        },
+        error => {
+          const resMessage =
+            (error.response &&
+              error.response.data &&
+              error.response.data.message) ||
+            error.message ||
+            error.toString();
+
+          this.setState({
+            loading: false,
+            message: resMessage
+          });
+        }
+      );
+    } else {
+      this.setState({
+        loading: false
+      });
+    }
+  }
+
+  render() {
+    return (
+      <div className="col-md-12">
+        <div className="card card-container">
+          <img
+            src="https://avatars.githubusercontent.com/u/110752227?s=200&v=4"
+            alt="profile-img"
+            className="profile-img-card"
+          />
+
+          <Form
+            onSubmit={this.handleLogin}
+            ref={c => {
+              this.form = c;
             }}
           >
-
-            
-            <div class="padding">
-             <Avatar
-          alt="Remy Sharp"
-          src="https://avatars.githubusercontent.com/u/110752227?s=200&v=4"
-          sx={{ width: 60, height: 60 }}
-/>
-</div>
-
-            <Typography component="h1" variant="h5">
-              Sign In To Focal
-            </Typography>
-            <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
+            <div className="form-group">
+              <label htmlFor="username">Username</label>
               <TextField
-                margin="normal"
-                required
-                fullWidth
-                id="email"
-                label="Email Address"
-                name="email"
-                autoComplete="email"
-                autoFocus
+                type="text"
+                className="form-control"
+                name="username"
+                value={this.state.username}
+                onChange={this.onChangeUsername}
+                validations={[required]}
               />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="password">Password</label>
               <TextField
-                margin="normal"
-                required
-                fullWidth
-                name="password"
-                label="Password"
                 type="password"
-                id="password"
-                autoComplete="current-password"
+                className="form-control"
+                name="password"
+                value={this.state.password}
+                onChange={this.onChangePassword}
+                validations={[required]}
               />
-              <FormControlLabel
-                control={<Checkbox value="remember" color="primary" />}
-                label="Remember me"
-              />
-              <Button
-                type="submit"
-                fullWidth
-                variant="contained"
-                sx={{ mt: 3, mb: 2 }}
+            </div>
+
+            <div className="form-group">
+              <button
+                className="btn btn-primary btn-block"
+                disabled={this.state.loading}
               >
-                Sign In
-              </Button>
-              <Grid container>
-                <Grid item xs>
-                  <Link href="#" variant="body2">
-                    Forgot password?
-                  </Link>
-                </Grid>
-                <Grid item>
-                  <Link href="signup" variant="body2">
-                    {"Don't have an account? Sign Up"}
-                  </Link>
-                </Grid>
-              </Grid>
-              <Copyright sx={{ mt: 5 }} />
-            </Box>
-          </Box>
-          
-        </Grid>
-        
-      </Grid>
-    </ThemeProvider>
-  );
+                {this.state.loading && (
+                  <span className="spinner-border spinner-border-sm"></span>
+                )}
+                <span>Login</span>
+              </button>
+            </div>
+
+            {this.state.message && (
+              <div className="form-group">
+                <div className="alert alert-danger" role="alert">
+                  {this.state.message}
+                </div>
+              </div>
+            )}
+            <CheckButton
+              style={{ display: "none" }}
+              ref={c => {
+                this.checkBtn = c;
+              }}
+            />
+          </Form>
+        </div>
+      </div>
+    );
+  }
 }

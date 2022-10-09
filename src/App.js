@@ -1,4 +1,5 @@
 import React from 'react';
+import { Component } from "react";
 import './App.css';
 import Home from './pages/Home.jsx';
 import Footer from './shared/Footer.jsx';
@@ -8,7 +9,10 @@ import { BrowserRouter } from "react-router-dom";
 import NavStructure from './shared/Navigation/NavStructure.jsx';
 import Settings from './pages/Settings';
 import NotFound from './pages/NotFound';
+import AuthService from "./services/auth.service";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import EventBus from "./common/EventBus";
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 //page imports
 import Login from './pages/Login'
@@ -27,13 +31,55 @@ import PrivacyPolicy from './pages/PrivacyPolicy';
 import Saved from './pages/Saved';
 
 
+class App2 extends Component {
+  constructor(props) {
+    super(props);
+    this.logOut = this.logOut.bind(this);
+
+    this.state = {
+      showModeratorBoard: false,
+      showAdminBoard: false,
+      currentUser: undefined,
+    };
+  }
+
+  componentDidMount() {
+    const user = AuthService.getCurrentUser();
+
+    if (user) {
+      this.setState({
+        currentUser: user,
+        showModeratorBoard: user.roles.includes("ROLE_MODERATOR"),
+        showAdminBoard: user.roles.includes("ROLE_ADMIN"),
+      });
+    }
+    
+    EventBus.on("logout", () => {
+      this.logOut();
+    });
+  }
+
+  componentWillUnmount() {
+    EventBus.remove("logout");
+  }
+
+  logOut() {
+    AuthService.logout();
+    this.setState({
+      showModeratorBoard: false,
+      showAdminBoard: false,
+      currentUser: undefined,
+    });
+  }
+}
 function App(props) {
 
   return (
     <>
       <BrowserRouter>
-        <Router>
-        </Router>
+       <Router>
+
+       </Router>
       </BrowserRouter>
       <Footer />
     </>
@@ -60,6 +106,7 @@ function Router() {
         { path: 'achievements', element: <Achievements /> },
         { path: 'privacypolicy', element: <PrivacyPolicy /> },
         { path: 'saved', element: <Saved /> },
+        
 
 
       ],
