@@ -12,10 +12,14 @@ import navConfig2 from './NavConfig2';
 import Badge from '@mui/material/Badge';
 import Divider from '@mui/material/Divider';
 import Chip from '@mui/material/Chip';
-import React from 'react';
+import React, { Component } from "react";
 import { userImage, activity, userEmail, userName, aboutMe } from '../../components/User/UserHandler';
-
-
+import AuthService from "../../services/auth.service";
+import { Redirect } from "react-router-guard";
+import AspectRatio from '@mui/joy/AspectRatio';
+import Link from '@mui/joy/Link';
+import Card from '@mui/joy/Card';
+import Typography from '@mui/joy/Typography';
 //icons
 import MailIcon from '@mui/icons-material/Mail';
 import HubIcon from '@mui/icons-material/Hub';
@@ -54,8 +58,6 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
   
 }));
 
-
-
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
   ...theme.typography.body2,
@@ -86,12 +88,12 @@ DashboardSidebar.propTypes = {
 //Const End
 
 
+ 
 
 
 //User Variables
 export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
 
- 
   var today = new Date()
   var curHr = today.getHours()
   
@@ -135,52 +137,38 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
       }}>
 
       <Box sx={{ px: 2.5, py: 0, display: 'inline-flex' }}></Box>
-      
-
-      <div className="profileCard">
-      
-           
-      <Stack spacing={0}>
-            
-       <Chip variant="outlined" avatar={<Avatar alt="Remy Sharp" src={userImage} />} label={userName} />
-         
-      </Stack>
-         
-     
+      <Card
+      row
+      sx={{
+        width: '100%',
+        gap: 1,
+        '&:hover': { boxShadow: 'md', borderColor: 'neutral.outlinedHoverBorder' },
+      }}
+    >
+      <AspectRatio ratio="1" sx={{ width: 50 }}>
+        <img
+          src="https://avatars.githubusercontent.com/u/110752227?s=200&v=4"
+          srcSet="https://images.unsplash.com/photo-1507833423370-a126b89d394b?auto=format&fit=crop&w=90&dpr=2 2x"
+          loading="lazy"
+          alt=""
+        />
+      </AspectRatio>
+      <div>
+        <Typography level="h2" fontSize="lg" id="card-description" mb={0}>
+          {userName}
+        </Typography>
+        <Typography fontSize="sm" aria-describedby="card-description" mb={0}>
+          <Link
+            overlay
+            underline="none"
+            href=""
+            sx={{ color: 'text.tertiary' }}
+          >
+            {status}
+          </Link>
+        </Typography>
       </div>
-
-      <div className="profileCard">
-      <card variant="outlined">
-            <Box sx={{ width: '100%', }}>
-            <Stack spacing={0}>
-            <Item>
-            <Stack direction="row" spacing={2}>
-
-            
-            <Chip size="small" label="Online" color="success" variant="outlined" />  
-            <div className='profileStatus'>
-            <Badge badgeContent={0} color="primary">
-           <MailIcon color="action" />
-           </Badge>   
-           </div>  
-           <div className='profileStatus'>
-            
-            <Badge badgeContent={0} color="primary">
-           <HubIcon color="action" />
-           
-           </Badge>   
-           </div>
-           <div className='profileStatus'>
-            <Badge badgeContent={4} color="primary">
-           <NoteIcon color="action" />
-           </Badge>   
-           </div>  
-            </Stack>
-          </Item> 
-         </Stack>
-        </Box>   
-      </card>
-      </div>
+    </Card>
      
      
       

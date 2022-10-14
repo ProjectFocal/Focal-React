@@ -1,4 +1,3 @@
-import * as React from 'react';
 import AspectRatio from '@mui/joy/AspectRatio';
 import Box from '@mui/joy/Box';
 import Card from '@mui/joy/Card';
@@ -9,9 +8,35 @@ import Divider from '@mui/material/Divider';
 import BookmarkIcon from '@mui/icons-material/Bookmark';
 import IconButton from '@mui/material/IconButton';
 import { userImage, activity, userEmail, userName, aboutMe } from '../components/User/UserHandler';
+import { Redirect } from "react-router-guard";
+import AuthService from "../services/auth.service";
+import React, { Component } from "react";
 
+export default class Profile extends Component {
+  constructor(props) {
+    super(props);
 
-export default function InteractiveCard() {
+    this.state = {
+      redirect: null,
+      userReady: false,
+      currentUser: { username: "" }
+    };
+  }
+
+  componentDidMount() {
+    const currentUser = AuthService.getCurrentUser();
+
+    if (!currentUser) this.setState({ redirect: "/home" });
+    this.setState({ currentUser: currentUser, userReady: true })
+  }
+
+  render() {
+    if (this.state.redirect) {
+      return <Redirect to={this.state.redirect} />
+    }
+
+    const { currentUser } = this.state;
+
  
   return (
     <center>
@@ -39,7 +64,7 @@ export default function InteractiveCard() {
         <Box sx={{ ml: 0.5 }}>
           <Typography level="h2" fontSize="lg" id="card-description" mb={0.5}>
 
-            {userName}
+            {currentUser.username}
 
           </Typography>
           <Typography fontSize="sm" aria-describedby="card-description" mb={1}>
@@ -63,4 +88,5 @@ export default function InteractiveCard() {
     
     </center>
   );
-}
+    }
+  }

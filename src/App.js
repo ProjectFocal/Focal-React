@@ -13,6 +13,9 @@ import AuthService from "./services/auth.service";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import EventBus from "./common/EventBus";
 import 'bootstrap/dist/css/bootstrap.min.css'
+import { ThemeProvider } from "@mui/material/styles";
+import CssBaseline from "@mui/material/CssBaseline";
+
 
 //page imports
 import Login from './pages/Login'

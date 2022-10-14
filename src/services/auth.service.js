@@ -28,7 +28,9 @@ class AuthService {
       email,
       password
     });
+    
   }
+  
 
   getCurrentUser() {
     return JSON.parse(localStorage.getItem('user'));;
@@ -36,3 +38,4 @@ class AuthService {
 }
 
 export default new AuthService();
+

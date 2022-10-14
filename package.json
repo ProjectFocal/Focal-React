@@ -29,6 +29,7 @@
     "react-router-guards": "^1.0.2",
     "react-router-redux": "^4.0.8",
     "react-scripts": "^2.1.8",
+    "react-soft-ui": "^0.1.2",
     "react-spinners": "^0.13.4",
     "react-validation": "^3.0.7",
     "simplebar-react": "^2.4.1",

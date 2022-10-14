@@ -4,9 +4,14 @@ import CheckButton from "react-validation/build/button";
 import TextField from '@mui/material/TextField';
 import AuthService from "../services/auth.service";
 import { ConnectedRouter, routerReducer, routerMiddleware } from 'react-router-redux';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
+import Paper from '@mui/material/Paper';
+import CssBaseline from '@mui/material/CssBaseline';
 
 
-
+const theme = createTheme();
 const required = value => {
   if (!value) {
     return (
@@ -87,13 +92,45 @@ export default class Login extends Component {
 
   render() {
     return (
+      <ThemeProvider theme={theme}>
+      <Grid container component="main" sx={{ height: '100vh' }}>
+        <CssBaseline />
+        <Grid
+          item
+          xs={false}
+          sm={4}
+          md={7}
+          sx={{
+            backgroundImage: 'url(https://source.unsplash.com/random)',
+            backgroundRepeat: 'no-repeat',
+            backgroundColor: (t) =>
+              t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        />
+        <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
+          <Box
+            sx={{
+              my: 8,
+              mx: 4,
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+            }}
+          >
       <div className="col-md-12">
-        <div className="card card-container">
+        <div className="">
           <img
             src="https://avatars.githubusercontent.com/u/110752227?s=200&v=4"
             alt="profile-img"
             className="profile-img-card"
           />
+          <center>
+          <div className="padding">
+          <h1>Login</h1>
+          </div>
+          </center>
 
           <Form
             onSubmit={this.handleLogin}
@@ -101,6 +138,7 @@ export default class Login extends Component {
               this.form = c;
             }}
           >
+            <div className="padding">
             <div className="form-group">
               <label htmlFor="username">Username</label>
               <TextField
@@ -112,7 +150,9 @@ export default class Login extends Component {
                 validations={[required]}
               />
             </div>
+            </div>
 
+            <div className="padding">
             <div className="form-group">
               <label htmlFor="password">Password</label>
               <TextField
@@ -124,7 +164,9 @@ export default class Login extends Component {
                 validations={[required]}
               />
             </div>
+            </div>
 
+            <div className="padding">
             <div className="form-group">
               <button
                 className="btn btn-primary btn-block"
@@ -135,6 +177,7 @@ export default class Login extends Component {
                 )}
                 <span>Login</span>
               </button>
+            </div>
             </div>
 
             {this.state.message && (
@@ -153,6 +196,10 @@ export default class Login extends Component {
           </Form>
         </div>
       </div>
+      </Box>
+        </Grid>
+      </Grid>
+    </ThemeProvider>
     );
   }
 }
